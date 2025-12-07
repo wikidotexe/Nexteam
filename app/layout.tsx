@@ -11,7 +11,7 @@ const geistSans = Geist({
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
-  title: "NoFileExistsHere. | Nexteam Technology Services",
+  title: "NoFileExistsHere.",
   description: "NoFileExistsHere (Nexteam) adalah penyedia layanan teknologi untuk website, aplikasi desktop, aplikasi mobile, desain grafis, jaringan internet, dan troubleshooting yang fokus pada solusi simpel, rapi, dan mudah digunakan.",
   keywords: [
     "NoFileExistsHere",
@@ -29,10 +29,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   openGraph: {
     type: "website",
-    siteName: "NoFileExistsHere. | Nexteam",
+    siteName: "NoFileExistsHere.",
     locale: "id_ID",
     url: siteUrl,
-    title: "NoFileExistsHere. | Nexteam Technology Services",
+    title: "NoFileExistsHere.",
     description: "Website resmi NoFileExistsHere (Nexteam) yang menyediakan layanan teknologi: website, aplikasi, jaringan internet, dan dukungan teknis untuk kebutuhan personal maupun bisnis.",
     images: [
       {
@@ -53,35 +53,12 @@ export const metadata: Metadata = {
   icons: [
     {
       rel: "icon",
-      url: "/favicon.ico",
+      type: "image/webp",
+      url: "/logo/logo.webp",
     },
     {
       rel: "apple-touch-icon",
-      url: "/apple-touch-icon.png",
-    },
-    {
-      rel: "icon",
-      type: "image/png",
-      url: "/favicon-32x32.png",
-      sizes: "32x32",
-    },
-    {
-      rel: "icon",
-      type: "image/png",
-      url: "/favicon-16x16.png",
-      sizes: "16x16",
-    },
-    {
-      rel: "icon",
-      type: "image/png",
-      url: "/android-chrome-192x192.png",
-      sizes: "192x192",
-    },
-    {
-      rel: "icon",
-      type: "image/png",
-      url: "/android-chrome-512x512.png",
-      sizes: "512x512",
+      url: "/logo/logo.webp",
     },
   ],
   robots: {
