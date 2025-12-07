@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     description: "Kami membantu Anda membangun website dan aplikasi web yang cepat, modern, dan mudah dikelola menggunakan teknologi modern seperti Next.js, React, dan Tailwind CSS.",
     url: "/services/web-development",
     type: "website",
+    images: [
+      {
+        url: "/services/web development.webp",
+        width: 1200,
+        height: 630,
+        alt: "Web Development service preview by NoFileExistsHere (Nexteam)",
+      },
+    ],
   },
 };
 

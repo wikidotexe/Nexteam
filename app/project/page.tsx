@@ -1,6 +1,26 @@
+import type { Metadata } from "next";
 import RevealOnScroll from "@/components/animation/reveal-on-scroll";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Projects | NoFileExistsHere. (Nexteam)",
+  description: "Kumpulan project yang pernah dikerjakan NoFileExistsHere (Nexteam), mulai dari website, aplikasi, hingga solusi infrastruktur untuk klien di berbagai industri.",
+  openGraph: {
+    title: "Projects | NoFileExistsHere. (Nexteam)",
+    description: "Lihat beberapa contoh project NoFileExistsHere (Nexteam) yang membantu klien menyelesaikan kebutuhan website, aplikasi, dan infrastruktur.",
+    url: "/project",
+    type: "website",
+    images: [
+      {
+        url: "/logo/logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "NoFileExistsHere (Nexteam) logo",
+      },
+    ],
+  },
+};
 
 const projects = [
   {

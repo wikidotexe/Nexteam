@@ -41,6 +41,19 @@ const footerSections = [
     ],
   },
   {
+    title: "Legal",
+    links: [
+      {
+        title: "Terms & Conditions",
+        href: "/terms",
+      },
+      {
+        title: "Privacy Policy",
+        href: "/privacy",
+      },
+    ],
+  },
+  {
     title: "Social",
     links: [
       {
@@ -54,19 +67,6 @@ const footerSections = [
       {
         title: "Tiktok",
         href: "https://www.tiktok.com/@fornexteam?_t=ZS-8t0J7M0lKa0&_r=1",
-      },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      {
-        title: "Terms & Conditions",
-        href: "/terms",
-      },
-      {
-        title: "Privacy Policy",
-        href: "/privacy",
       },
     ],
   },

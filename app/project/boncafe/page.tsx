@@ -1,7 +1,27 @@
+import type { Metadata } from "next";
 import RevealOnScroll from "@/components/animation/reveal-on-scroll";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Optimasi Jaringan PT BON CAFE INDONESIA | NoFileExistsHere. (Nexteam)",
+  description: "Studi kasus optimasi jaringan di salah satu cabang PT BON CAFE INDONESIA untuk meningkatkan stabilitas koneksi, mengurangi downtime, dan memudahkan monitoring infrastruktur.",
+  openGraph: {
+    title: "Optimasi Jaringan PT BON CAFE INDONESIA | NoFileExistsHere. (Nexteam)",
+    description: "Detail project optimasi jaringan PT BON CAFE INDONESIA oleh NoFileExistsHere (Nexteam), mulai dari pemetaan kondisi, rekomendasi topologi, hingga hasil akhir.",
+    url: "/project/boncafe",
+    type: "article",
+    images: [
+      {
+        url: "/projects/boncafe.webp",
+        width: 1200,
+        height: 630,
+        alt: "Topologi jaringan PT BON CAFE INDONESIA - project Nexteam",
+      },
+    ],
+  },
+};
 
 const BoncafeProjectPage = () => {
   return (

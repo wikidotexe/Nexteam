@@ -63,7 +63,7 @@ export const NavigationSheet = () => {
 
         <div className="mt-8 space-y-4">
           <Button asChild className="w-full xs:hidden rounded-full">
-            <Link href="/contact">Get Started</Link>
+            <Link href="/contact">Contact</Link>
           </Button>
         </div>
       </SheetContent>

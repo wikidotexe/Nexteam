@@ -37,10 +37,21 @@ export const metadata: Metadata = {
     description: "Website resmi NoFileExistsHere (Nexteam) yang menyediakan layanan teknologi: website, aplikasi, jaringan internet, dan dukungan teknis untuk kebutuhan personal maupun bisnis.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/logo/logo.webp",
         width: 1200,
         height: 630,
-        alt: "NoFileExistsHere (Nexteam) Technology Services",
+        alt: "NoFileExistsHere (Nexteam) logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NoFileExistsHere.",
+    description: "Website resmi NoFileExistsHere (Nexteam) yang menyediakan layanan teknologi: website, aplikasi, jaringan internet, dan dukungan teknis untuk kebutuhan personal maupun bisnis.",
+    images: [
+      {
+        url: "/logo/logo.webp",
+        alt: "NoFileExistsHere (Nexteam) logo",
       },
     ],
   },

@@ -1,7 +1,27 @@
+import type { Metadata } from "next";
 import RevealOnScroll from "@/components/animation/reveal-on-scroll";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Website Pesantren Pondok Bambu | NoFileExistsHere. (Nexteam)",
+  description: "Website profil Pesantren Pondok Bambu yang menyajikan informasi kegiatan, program pendidikan, dan kontak bagi orang tua atau calon santri.",
+  openGraph: {
+    title: "Website Pesantren Pondok Bambu | NoFileExistsHere. (Nexteam)",
+    description: "Detail project pembuatan website profil Pesantren Pondok Bambu oleh NoFileExistsHere (Nexteam), mulai dari kebutuhan hingga hasil akhir.",
+    url: "/project/pesantren",
+    type: "article",
+    images: [
+      {
+        url: "/projects/pesantren.png",
+        width: 1200,
+        height: 630,
+        alt: "Tampilan website Pesantren Pondok Bambu - project Nexteam",
+      },
+    ],
+  },
+};
 
 const PesantrenProjectPage = () => {
   return (

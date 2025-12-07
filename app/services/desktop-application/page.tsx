@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     description: "Kami membantu mengembangkan aplikasi desktop untuk Windows, macOS, atau Linux yang terintegrasi dengan alur kerja dan perangkat di lingkungan kerja Anda.",
     url: "/services/desktop-application",
     type: "website",
+    images: [
+      {
+        url: "/services/desktop.webp",
+        width: 1200,
+        height: 630,
+        alt: "Desktop Application service preview by NoFileExistsHere (Nexteam)",
+      },
+    ],
   },
 };
 
