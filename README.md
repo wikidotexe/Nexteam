@@ -1,65 +1,86 @@
-# Beautiful Shadcn UI Landing Page
+# NoFileExistsHere / Nexteam Website
 
-A modern, responsive landing page template built with Next.js, Tailwind CSS, and Shadcn UI, and Shadcn UI Blocks.
+Landing page dan website layanan teknologi **NoFileExistsHere (Nexteam)** yang dibangun dengan Next.js 15, Tailwind CSS, dan Shadcn UI.
 
-## Demo
+Website ini berfokus pada penyediaan informasi layanan:
 
-[Live Demo](https://shadcn-ui-landing-page.vercel.app/)
+- **Web Development**
+- **Desktop Application**
+- **Mobile Application**
+- **Graphic Design**
+- **Internet & Infrastructure**
+- **Operating System**
+- **Troubleshooting Cases**
 
-## Preview
+Konten utama menggunakan bahasa Indonesia, sementara judul, navbar, dan teks tombol tetap menggunakan bahasa Inggris sesuai kebutuhan brand.
 
-![Preview](./public/page-preview.png)
+## Fitur Utama
 
-## Features
+- **Landing page modern** dengan hero, services, testimonials, FAQ, Our Team, dan Our Clients.
+- **Halaman detail service** untuk setiap layanan dengan hero image 16:9, breadcrumb, dan CTA.
+- **Halaman statis tambahan**: About Us, Terms & Conditions, Privacy Policy, Contact.
+- **Form kontak** yang terhubung ke API route dengan pengiriman email via SMTP (Nodemailer).
+- **Dekorasi visual**: background garis bergelombang, ilustrasi hero, dan elemen tambahan di contact.
+- **SEO ready**:
+  - Global metadata di `app/layout.tsx`.
+  - Metadata/Open Graph per halaman service di `app/services/*/page.tsx`.
 
-- 🎨 Modern and clean design
-- 📱 Fully responsive layout
-- 🎯 Built with Next.js 15
-- 💅 Styled with Tailwind CSS [`3.4`](https://github.com/akash3444/shadcn-ui-landing-page/tree/tailwind-v3) & [`4.0`](https://github.com/akash3444/shadcn-ui-landing-page)
-- 🧩 Built with [Shadcn UI](https://ui.shadcn.com) and [Shadcn UI Blocks](https://shadcnui-blocks.com)
-- 🌙 Dark mode support
+## Tech Stack
 
-## Getting Started
+- **Framework**: Next.js 15 (App Router)
+- **Bahasa**: TypeScript, React
+- **UI**: Tailwind CSS, [Shadcn UI](https://ui.shadcn.com)
+- **Animasi**: Framer Motion (RevealOnScroll)
+- **Ikon**: Lucide React
+- **Email**: Nodemailer via API route `/api/contact`
 
-1. Clone the repository:
+## Menjalankan Secara Lokal
 
-```bash
-git clone https://github.com/akash3444/shadcn-ui-landing-page.git
-cd shadcn-ui-landing-page
-```
-
-2. To use Tailwind CSS v3.4:
-
-- Switch to the `tailwind-v3` branch:
-
-```bash
-git checkout `tailwind-v3`
-```
-
-3. Install dependencies:
+1. Install dependencies:
 
 ```bash
 npm install
 ```
 
-4. Start the development server:
+2. Jalankan development server:
 
 ```bash
 npm run dev
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+3. Buka `http://localhost:3000` di browser.
 
-## Customization
+## Environment Variables
 
-1. Replace the placeholder images with your own content.
-2. Modify the text and styles in the components to match your brand and messaging.
-3. Add your own features and sections as needed.
+Beberapa environment variable yang digunakan (lihat juga `app/api/contact/route.ts`):
 
-## Why this template?
+- `NEXT_PUBLIC_SITE_URL` – URL publik website (contoh: `https://nofileexistshere.com`).
+- `SMTP_HOST` – host SMTP.
+- `SMTP_PORT` – port SMTP.
+- `SMTP_SECURE` – `true`/`false` sesuai kebutuhan.
+- `SMTP_USER` – username akun SMTP.
+- `SMTP_PASS` – password akun SMTP.
+- `SMTP_FROM` – alamat email pengirim default.
+- `SMTP_TO` – alamat email penerima pesan dari form kontak.
 
-This project is a base template for a landing page. It is built with Next.js, Tailwind CSS, Shadcn UI, and Shadcn UI Blocks. It is a great starting point for a landing page. You can customized the content and media files as per your needs. It is not intended to be a complete solution for a landing page. It is intended to be a starting point for a landing page.
+Semua variable ini sebaiknya didefinisikan di file `.env.local` (tidak di-commit).
 
-## Contributing
+## Struktur Penting
 
-If you have any suggestions or improvements, please create an issue or submit a pull request.
+- `app/layout.tsx` – konfigurasi layout global, SEO utama, dan ThemeProvider.
+- `app/page.tsx` – landing page utama.
+- `app/services/*/page.tsx` – halaman detail tiap service.
+- `app/contact/page.tsx` – halaman kontak + form.
+- `app/about-us/page.tsx` – halaman About Us.
+- `components/` – komponen UI seperti `hero`, `service`, `testimonial`, `ourteam`, `our-clients`, `footer`, dan navbar.
+
+## Deployment
+
+Project ini dapat dideploy ke platform yang mendukung Next.js (misalnya Vercel atau Netlify). Pastikan:
+
+- Environment variables sudah diatur di dashboard platform.
+- `NEXT_PUBLIC_SITE_URL` mengarah ke domain produksi.
+
+---
+
+Project ini berasal dari template Shadcn UI Landing Page dan telah dimodifikasi agar sesuai dengan kebutuhan brand **NoFileExistsHere / Nexteam**.
