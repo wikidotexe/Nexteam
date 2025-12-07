@@ -1,7 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import { Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import RevealOnScroll from "./animation/reveal-on-scroll";
+import { cn } from "@/lib/utils";
 
 const teamMembers = [
   {
@@ -35,6 +39,8 @@ const teamMembers = [
 ];
 
 const OurTeam = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   return (
     <div id="team" className="max-w-(--breakpoint-xl) mx-auto py-12 xs:py-20 px-6">
       <RevealOnScroll>
@@ -47,10 +53,18 @@ const OurTeam = () => {
             <RevealOnScroll key={member.name} delay={0.05 * index}>
               <div className="group bg-accent/60 border rounded-xl overflow-hidden h-full flex flex-col">
                 {/* Image */}
-                <div className="relative w-full aspect-square">
+                <div className="relative w-full aspect-square cursor-pointer" onClick={() => setActiveIndex((prev) => (prev === index ? null : index))}>
                   <Image src={member.image} alt={member.name} fill className="object-cover" />
                   {/* Social overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div
+                    className={cn(
+                      "absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity",
+                      // Mobile: toggle by tap
+                      activeIndex === index ? "opacity-100" : "opacity-0",
+                      // Desktop: show on hover
+                      "md:opacity-0 md:group-hover:opacity-100"
+                    )}
+                  >
                     <div className="flex items-center gap-3 rounded-full bg-background px-4 py-2 shadow-md">
                       <Link href={member.linkedin} target="_blank" aria-label={`${member.name} on LinkedIn`}>
                         <Linkedin className="h-5 w-5 text-muted-foreground hover:text-foreground" />
