@@ -144,13 +144,9 @@
   }
   html {
     @apply scroll-smooth;
-    max-width: 100%;
-    overflow-x: hidden;
   }
   body {
     @apply bg-background text-foreground;
-    max-width: 100%;
-    overflow-x: hidden;
   }
   button {
     @apply cursor-pointer;

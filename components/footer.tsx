@@ -140,7 +140,7 @@ const Footer = () => {
 
       {/* Huge decorative text at the very bottom */}
       <div className="pointer-events-none select-none absolute inset-x-0 -bottom-10 sm:-bottom-44 md:-bottom-80 flex justify-center">
-        <span className="font-mono font-bold tracking-[0.001em] text-[16vw] sm:text-[12vw] md:text-[10vw] leading-none text-foreground/5">NoFileExitsHere</span>
+        <span className="font-mono font-bold tracking-[0.001em] text-[16vw] sm:text-[12vw] md:text-[10vw] leading-none text-foreground/5">Nexteam</span>
       </div>
     </footer>
   );
