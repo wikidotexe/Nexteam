@@ -1,0 +1,104 @@
+"use client";
+
+import RevealOnScroll from "./animation/reveal-on-scroll";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { StarIcon } from "lucide-react";
+
+const testimonials = [
+  {
+    id: 1,
+    name: "Muhajir",
+    designation: "Mahasiswa",
+    company: "",
+    testimonial: "Proses migrasi website tugas akhir saya berjalan sangat lancar. Semua langkah dijelaskan secara rinci, sehingga saya bisa memahami setiap tahapannya",
+    avatar: "https://randomuser.me/api/portraits/men/1.jpg",
+  },
+  {
+    id: 2,
+    name: "Fitriah Ulfah",
+    designation: "HRD - Forthen Indonesia",
+    company: "Forthen Indonesia",
+    testimonial: "Instalasi jaringan dilakukan dengan cepat dan hasilnya sangat memuaskan. Koneksi stabil sepanjang waktu, dan tim selalu siap membantu ketika ada kendala.",
+    avatar: "https://randomuser.me/api/portraits/women/2.jpg",
+  },
+  {
+    id: 3,
+    name: "Hanna Christina",
+    designation: "Digital Ads - Megapenerjemah",
+    company: "Megapenerjemah",
+    testimonial: "Big thanks buat kakaknya! Benar-benar sabar dan sangat membantu. Prosesnya cepat, komunikasinya jelas, dan hasilnya memuaskan. Pokoknya bintang 5",
+    avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+  },
+  {
+    id: 4,
+    name: "Putri Azka",
+    designation: "Event & Comunity - BLP Team",
+    company: "BLP Beauty",
+    testimonial: "Semuanya cepet, gak ada masalah sih selama sebulan ini. Harga pemasangan juga bersahabat, dan dikasih saran sesuai budget jugaa. Thaankss semogaa bs langganan sampeee tua yah!.",
+    avatar: "https://randomuser.me/api/portraits/women/4.jpg",
+  },
+  {
+    id: 5,
+    name: "Aditiya Puspanegara",
+    designation: "Journalist - Owner Journal Pathway Care",
+    company: "Journal Pathway Care",
+    testimonial: "Abang ini asik banget orangnya, sabar dan mau ngerti saya walaupun saya ngomongnya nggak pake bahasa IT. Jadi nggak bikin saya pusing sama istilah teknis,  Pokoknya enak diajak ngobrol. Gaskeun",
+    avatar: "https://randomuser.me/api/portraits/men/5.jpg",
+  },
+  {
+    id: 6,
+    name: "Guntur Sahadi",
+    designation: "Technician - Indihome",
+    company: "Telkkom",
+    testimonial: "Sangat puas dengan hasil pekerjaan yang rapi dan layanan yang profesional. Jaringan stabil sepanjang hari membuat pekerjaan menjadi lebih efisien.",
+    avatar: "https://randomuser.me/api/portraits/women/6.jpg",
+  },
+];
+
+const Testimonial = () => {
+  return (
+    <div id="testimonials" className="w-full max-w-(--breakpoint-xl) mx-auto py-6 xs:py-12 px-6">
+      <RevealOnScroll>
+        <h2 className="mb-8 xs:mb-14 text-4xl md:text-5xl font-bold text-center tracking-tight">Testimonials</h2>
+      </RevealOnScroll>
+      <RevealOnScroll delay={0.05}>
+        <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {testimonials.map((testimonial, index) => (
+            <RevealOnScroll key={testimonial.id} delay={0.04 * index}>
+              <TestimonialCard testimonial={testimonial} />
+            </RevealOnScroll>
+          ))}
+        </div>
+      </RevealOnScroll>
+    </div>
+  );
+};
+
+const TestimonialCard = ({ testimonial }: { testimonial: (typeof testimonials)[number] }) => (
+  <div className="mb-8 bg-accent rounded-xl py-8 px-6 sm:py-6">
+    <div className="flex flex-col gap-4 sm:gap-6">
+      <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center gap-4">
+          <Avatar className="w-10 h-10">
+            <AvatarFallback className="text-xl font-medium bg-primary text-primary-foreground">{testimonial.name.charAt(0)}</AvatarFallback>
+          </Avatar>
+          <div>
+            <p className="text-base sm:text-lg font-semibold">{testimonial.name}</p>
+            <p className="text-xs sm:text-sm text-gray-500">{testimonial.designation}</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-1">
+          <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-muted-foreground stroke-muted-foreground" />
+          <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-muted-foreground stroke-muted-foreground" />
+          <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-muted-foreground stroke-muted-foreground" />
+          <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-muted-foreground stroke-muted-foreground" />
+          <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-muted-foreground stroke-muted-foreground" />
+        </div>
+      </div>
+
+      <p className="mt-2 text-base sm:text-lg lg:text-xl leading-relaxed font-semibold tracking-tight">&quot;{testimonial.testimonial}&quot;</p>
+    </div>
+  </div>
+);
+
+export default Testimonial;
