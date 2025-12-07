@@ -34,7 +34,9 @@ const OperatingSystemPage = () => {
               / <span className="text-foreground font-medium">Operating System</span>
             </p>
             <br></br>
-            <p className="max-w-2xl mx-auto text-muted-foreground text-sm md:text-base">Kami membantu instalasi, konfigurasi, dan hardening sistem operasi untuk server maupun desktop agar lebih stabil dan aman digunakan.</p>
+            <p className="max-w-2xl mx-auto text-muted-foreground text-sm md:text-base">
+              Kami menangani instalasi, konfigurasi, dan hardening sistem operasi server maupun desktop agar lingkungan kerja jauh lebih stabil, aman, dan mudah di-maintain oleh tim Anda ke depannya.
+            </p>
           </div>
         </RevealOnScroll>
 

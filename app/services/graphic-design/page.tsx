@@ -34,7 +34,9 @@ const GraphicDesignPage = () => {
               / <span className="text-foreground font-medium">Graphic Design</span>
             </p>
             <br></br>
-            <p className="max-w-2xl mx-auto text-muted-foreground text-sm md:text-base">Kami bantu menyusun tampilan visual brand Anda mulai dari logo, social media kit, hingga materi promosi dengan gaya yang konsisten dan profesional.</p>
+            <p className="max-w-2xl mx-auto text-muted-foreground text-sm md:text-base">
+              Kami bantu menyusun tampilan visual brand Anda mulai dari logo, social media kit, hingga materi promosi dengan gaya yang konsisten, profesional, dan mudah dikenali di mana pun orang melihat bisnis Anda.
+            </p>
           </div>
         </RevealOnScroll>
 

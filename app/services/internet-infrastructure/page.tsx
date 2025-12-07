@@ -34,7 +34,9 @@ const InternetInfrastructurePage = () => {
               / <span className="text-foreground font-medium">Internet &amp; Infrastructure</span>
             </p>
             <br></br>
-            <p className="max-w-2xl mx-auto text-muted-foreground text-sm md:text-base">Kami membantu menyiapkan jaringan, server, dan infrastruktur cloud yang stabil dan aman untuk mendukung operasional harian bisnis Anda.</p>
+            <p className="max-w-2xl mx-auto text-muted-foreground text-sm md:text-base">
+              Kami membantu menyiapkan jaringan, server, dan infrastruktur cloud yang stabil dan aman sehingga tim Anda bisa bekerja tenang tanpa takut gangguan koneksi atau sistem yang sering down.
+            </p>
           </div>
         </RevealOnScroll>
 

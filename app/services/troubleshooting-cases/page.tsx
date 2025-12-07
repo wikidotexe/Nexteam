@@ -34,7 +34,9 @@ const TroubleshootingCasesPage = () => {
               / <span className="text-foreground font-medium">Troubleshooting Cases</span>
             </p>
             <br></br>
-            <p className="max-w-2xl mx-auto text-muted-foreground text-sm md:text-base">Layanan troubleshooting untuk membantu menemukan akar masalah dan memperbaiki gangguan pada sistem, jaringan, atau aplikasi Anda.</p>
+            <p className="max-w-2xl mx-auto text-muted-foreground text-sm md:text-base">
+              Layanan troubleshooting untuk membantu menemukan akar masalah dan memperbaiki gangguan pada sistem, jaringan, atau aplikasi Anda sehingga operasional bisa kembali normal secepat mungkin.
+            </p>
           </div>
         </RevealOnScroll>
 

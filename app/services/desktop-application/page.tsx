@@ -35,7 +35,8 @@ const DesktopApplicationPage = () => {
             </p>
             <br></br>
             <p className="max-w-2xl mx-auto text-muted-foreground text-sm md:text-base">
-              Kami mengembangkan aplikasi desktop yang stabil dan ringan untuk kebutuhan internal perusahaan maupun produk komersial, dengan fokus pada performa, keamanan, dan kemudahan penggunaan.
+              Kami mengembangkan aplikasi desktop yang stabil, ringan, dan benar-benar mengikuti alur kerja tim Anda. Cocok untuk otomasi tugas berulang, pengelolaan data internal, maupun produk komersial yang butuh performa tinggi dan
+              keamanan terjaga.
             </p>
           </div>
         </RevealOnScroll>

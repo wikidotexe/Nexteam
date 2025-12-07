@@ -35,7 +35,8 @@ const MobileApplicationPage = () => {
             </p>
             <br></br>
             <p className="max-w-2xl mx-auto text-muted-foreground text-sm md:text-base">
-              Kami mengembangkan aplikasi mobile untuk Android dan iOS dengan fokus pada kemudahan penggunaan, performa, dan tampilan yang selaras dengan brand Anda.
+              Kami mengembangkan aplikasi mobile untuk Android dan iOS yang membuat layanan Anda selalu ada di genggaman pengguna. Desainnya selaras dengan brand, mudah digunakan, dan dioptimalkan untuk performa sehingga nyaman dipakai
+              setiap hari.
             </p>
           </div>
         </RevealOnScroll>

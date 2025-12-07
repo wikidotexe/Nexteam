@@ -36,8 +36,8 @@ const WebDevelopmentPage = () => {
             </p>
             <br></br>
             <p className="max-w-2xl mx-auto text-muted-foreground text-sm md:text-base">
-              Kami membantu Anda membangun website dan aplikasi web yang cepat, modern, dan mudah dikelola. Mulai dari landing page sederhana sampai platform web yang kompleks, kami rancang dengan fokus pada performa, keamanan, dan
-              pengalaman pengguna.
+              Kami membantu Anda membangun website dan aplikasi web yang tidak hanya terlihat modern, tetapi juga bekerja cepat, aman, dan mudah dikelola. Dari landing page sederhana sampai platform web yang kompleks, semuanya dirancang
+              untuk meningkatkan kepercayaan, mempermudah alur kerja, dan membuka lebih banyak peluang bisnis.
             </p>
           </div>
         </RevealOnScroll>
