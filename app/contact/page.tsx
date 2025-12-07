@@ -177,6 +177,17 @@ const ContactPage = () => {
                       <Linkedin className="h-4 w-4" />
                     </Link>
                   </div>
+
+                  {/* Embedded maps below social icons */}
+                  <div className="mt-5 rounded-2xl overflow-hidden border border-border/70 bg-muted/40">
+                    <iframe
+                      src="https://maps.google.com/maps?width=600&height=400&hl=en&q=pasar%20rebo&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+                      title="Nexteam Location"
+                      className="w-full h-48 sm:h-56 md:h-64"
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    />
+                  </div>
                 </div>
               </div>
             </div>

@@ -16,13 +16,14 @@ const clients: Client[] = [
     logoDark: "/clients/blpteam-putih.webp",
     url: "#",
   },
-  { name: "Proban", logo: "/clients/proban.webp", url: "#" },
-  { name: "Transgo", logo: "/clients/transgo.webp", url: "#" },
-  { name: "Penerjemah", logo: "/clients/penerjemah.webp", url: "#" },
-  { name: "XL", logo: "/clients/xl.webp", url: "#" },
-  { name: "Indihome", logo: "/clients/indihome.webp", url: "#" },
-  { name: "Jurnal", logo: "/clients/jurnal.webp", url: "#" },
+  { name: "Proban", logo: "/clients/proban.webp", url: "https://proban.co.id/" },
+  { name: "Transgo", logo: "/clients/transgo.webp", url: "https://transgo.id/sewa" },
+  { name: "Penerjemah", logo: "/clients/penerjemah.webp", url: "https://ps.megapenerjemah.com/" },
+  { name: "XL", logo: "/clients/xl.webp", url: "https://www.xl.co.id/" },
+  { name: "Indihome", logo: "/clients/indihome.webp", url: "https://www.telkomsel.com/indihome" },
+  { name: "Jurnal", logo: "/clients/jurnal.webp", url: "https://journalpress.web.id/index.php/jpc/index" },
   { name: "QPair", logo: "/clients/qpair.webp", url: "#" },
+  { name: "Transmonang", logo: "/clients/transmonang.webp", url: "https://transmonang.com/" },
 ];
 
 const OurClients = () => {

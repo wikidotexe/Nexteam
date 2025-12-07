@@ -14,7 +14,7 @@ const WhatsAppBubble = () => {
   const supportText = encodeURIComponent("Halo, saya butuh bantuan teknis (Support) dari Nexteam.");
 
   return (
-    <div className="fixed bottom-20 md:bottom-5 right-5 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
       {open && (
         <div className="w-64 rounded-2xl border border-border bg-background/95 shadow-xl backdrop-blur-md px-4 py-3 text-sm">
           <div className="flex items-center justify-between gap-2 mb-2">

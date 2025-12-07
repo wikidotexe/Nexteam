@@ -86,7 +86,7 @@ const Footer = () => {
               <Logo />
             </div>
 
-            <p className="mt-4 text-muted-foreground">Menciptakan pengalaman digital yang menarik dan bermakna untuk membuat lebih banyak orang bahagia.</p>
+            <p className="mt-4 text-muted-foreground">Membantu bisnis menghadirkan pengalaman digital yang simpel, cepat, dan bermakna.</p>
           </div>
         </RevealOnScroll>
 

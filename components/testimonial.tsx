@@ -88,11 +88,11 @@ const TestimonialCard = ({ testimonial }: { testimonial: (typeof testimonials)[n
           </div>
         </div>
         <div className="flex items-center gap-1">
-          <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-muted-foreground stroke-muted-foreground" />
-          <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-muted-foreground stroke-muted-foreground" />
-          <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-muted-foreground stroke-muted-foreground" />
-          <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-muted-foreground stroke-muted-foreground" />
-          <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-muted-foreground stroke-muted-foreground" />
+          <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 stroke-yellow-500" />
+          <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 stroke-yellow-500" />
+          <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 stroke-yellow-500" />
+          <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 stroke-yellow-500" />
+          <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 stroke-yellow-500" />
         </div>
       </div>
 
