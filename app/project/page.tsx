@@ -1,8 +1,21 @@
-"use client";
-
 import RevealOnScroll from "@/components/animation/reveal-on-scroll";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+
+const projects = [
+  {
+    slug: "pesantren",
+    title: "Website Pesantren Pondok Bambu",
+    description: "Website profil untuk Pesantren Pondok Bambu, menampilkan informasi kegiatan, program, dan kontak pesantren.",
+    type: "Web Development",
+  },
+  {
+    slug: "boncafe",
+    title: "Optimasi Jaringan PT BON CAFE INDONESIA",
+    description: "Project optimasi jaringan dan infrastruktur IT untuk cabang-cabang PT BON CAFE INDONESIA agar koneksi lebih stabil dan terukur.",
+    type: "Internet & Infrastructure",
+  },
+] as const;
 
 const ProjectPage = () => {
   return (
@@ -17,29 +30,15 @@ const ProjectPage = () => {
 
         <RevealOnScroll delay={0.05}>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-xl border border-accent bg-background/60 p-6 flex flex-col justify-between">
-              <div>
-                <h2 className="text-lg font-semibold tracking-tight">Company Profile Website</h2>
-                <p className="mt-2 text-sm text-muted-foreground">Website profil perusahaan sederhana namun profesional untuk membantu klien terlihat lebih kredibel di mata pelanggan dan partner bisnis.</p>
-              </div>
-              <p className="mt-4 text-xs text-muted-foreground">Tipe: Web Development</p>
-            </div>
-
-            <div className="rounded-xl border border-accent bg-background/60 p-6 flex flex-col justify-between">
-              <div>
-                <h2 className="text-lg font-semibold tracking-tight">Internal Desktop Tools</h2>
-                <p className="mt-2 text-sm text-muted-foreground">Aplikasi desktop ringan untuk mempermudah pekerjaan administrasi harian dan mengurangi pekerjaan manual berulang.</p>
-              </div>
-              <p className="mt-4 text-xs text-muted-foreground">Tipe: Desktop Application</p>
-            </div>
-
-            <div className="rounded-xl border border-accent bg-background/60 p-6 flex flex-col justify-between">
-              <div>
-                <h2 className="text-lg font-semibold tracking-tight">Landing Page Campaign</h2>
-                <p className="mt-2 text-sm text-muted-foreground">Landing page fokus konversi untuk campaign marketing, dirancang agar mudah diakses dan cepat di-load di berbagai perangkat.</p>
-              </div>
-              <p className="mt-4 text-xs text-muted-foreground">Tipe: UI/UX & Web</p>
-            </div>
+            {projects.map((project) => (
+              <Link key={project.slug} href={`/project/${project.slug}`} className="group rounded-xl border border-accent bg-background/60 p-6 flex flex-col justify-between transition-transform duration-150 hover:-translate-y-0.5">
+                <div>
+                  <h2 className="text-lg font-semibold tracking-tight group-hover:underline">{project.title}</h2>
+                  <p className="mt-2 text-sm text-muted-foreground">{project.description}</p>
+                </div>
+                <p className="mt-4 text-xs text-muted-foreground">Tipe: {project.type}</p>
+              </Link>
+            ))}
           </div>
         </RevealOnScroll>
 

@@ -81,7 +81,7 @@ const Footer = () => {
             {/* Logo */}
             <div className="flex flex-col items-start gap-3">
               <div className="relative h-14 w-44">
-                <Image src="/logo/logo.webp" alt="NoFileExistsHere logo" fill className="object-contain object-left" />
+                <Image src="/logo/logo.webp" alt="NoFileExistsHere logo" fill sizes="(min-width: 1024px) 11rem, (min-width: 640px) 10rem, 9rem" className="object-contain object-left" />
               </div>
               <Logo />
             </div>

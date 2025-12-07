@@ -56,12 +56,24 @@ const OurClients = () => {
                       {"logoLight" in client && "logoDark" in client ? (
                         <>
                           {/* Light mode logo */}
-                          <Image src={client.logoLight} alt={client.name} fill className="object-contain transition duration-200 grayscale group-hover:grayscale-0 block dark:hidden" />
+                          <Image
+                            src={client.logoLight}
+                            alt={client.name}
+                            fill
+                            sizes="(min-width: 1024px) 8rem, (min-width: 640px) 7rem, 6rem"
+                            className="object-contain transition duration-200 grayscale group-hover:grayscale-0 block dark:hidden"
+                          />
                           {/* Dark mode logo */}
-                          <Image src={client.logoDark} alt={client.name} fill className="object-contain transition duration-200 grayscale group-hover:grayscale-0 hidden dark:block" />
+                          <Image
+                            src={client.logoDark}
+                            alt={client.name}
+                            fill
+                            sizes="(min-width: 1024px) 8rem, (min-width: 640px) 7rem, 6rem"
+                            className="object-contain transition duration-200 grayscale group-hover:grayscale-0 hidden dark:block"
+                          />
                         </>
                       ) : (
-                        <Image src={client.logo} alt={client.name} fill className="object-contain transition duration-200 grayscale group-hover:grayscale-0" />
+                        <Image src={client.logo} alt={client.name} fill sizes="(min-width: 1024px) 8rem, (min-width: 640px) 7rem, 6rem" className="object-contain transition duration-200 grayscale group-hover:grayscale-0" />
                       )}
                     </div>
                   </Link>

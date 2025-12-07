@@ -43,7 +43,7 @@ const OperatingSystemPage = () => {
         <RevealOnScroll delay={0.05}>
           <div className="rounded-xl overflow-hidden shadow-sm border bg-background">
             <div className="relative aspect-video">
-              <Image src="/services/operating sistem.webp" alt="Operating System preview" fill className="object-cover object-top" priority />
+              <Image src="/services/operating sistem.webp" alt="Operating System preview" fill priority sizes="(min-width: 1024px) 1000px, (min-width: 768px) 800px, 100vw" className="object-contain object-center bg-muted" />
             </div>
           </div>
         </RevealOnScroll>

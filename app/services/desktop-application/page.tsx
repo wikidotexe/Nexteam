@@ -44,7 +44,7 @@ const DesktopApplicationPage = () => {
         <RevealOnScroll delay={0.05}>
           <div className="rounded-xl overflow-hidden shadow-sm border bg-background">
             <div className="relative aspect-video">
-              <Image src="/services/desktop.webp" alt="Desktop Application preview" fill className="object-cover object-top" priority />
+              <Image src="/services/desktop.webp" alt="Desktop Application preview" fill priority sizes="(min-width: 1024px) 1000px, (min-width: 768px) 800px, 100vw" className="object-contain object-center bg-muted" />
             </div>
           </div>
         </RevealOnScroll>

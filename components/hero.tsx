@@ -29,9 +29,9 @@ const Hero = () => {
         <RevealOnScroll delay={0.1}>
           <div className="relative lg:max-w-lg xl:max-w-xl w-full rounded-xl aspect-square h-72 md:h-[600px]">
             {/* Light mode image */}
-            <Image src="/hero/hero-putih.png" fill alt="" className="object-cover rounded-xl block dark:hidden" />
+            <Image src="/hero/hero-putih.png" fill alt="" sizes="(min-width: 1024px) 32rem, (min-width: 768px) 28rem, 20rem" priority className="object-cover rounded-xl block dark:hidden" />
             {/* Dark mode image */}
-            <Image src="/hero/hero-hitam.png" fill alt="" className="object-cover rounded-xl hidden dark:block" />
+            <Image src="/hero/hero-hitam.png" fill alt="" sizes="(min-width: 1024px) 32rem, (min-width: 768px) 28rem, 20rem" priority className="object-cover rounded-xl hidden dark:block" />
           </div>
         </RevealOnScroll>
       </div>

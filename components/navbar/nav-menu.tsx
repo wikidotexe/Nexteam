@@ -10,7 +10,9 @@ import { motion } from "framer-motion";
 const items = [
   { key: "home", label: "Home", href: "/" },
   { key: "services", label: "Services", href: "/#services", sectionId: "services" },
+  { key: "faq", label: "FAQ", href: "/#faq", sectionId: "faq" },
   { key: "clients", label: "Clients", href: "/#clients", sectionId: "clients" },
+  { key: "testimonials", label: "Testimonials", href: "/#testimonials", sectionId: "testimonials" },
   { key: "team", label: "Our Team", href: "/#team", sectionId: "team" },
 ] as const;
 
@@ -18,6 +20,13 @@ export const NavMenu = ({ className, orientation, ...rest }: NavigationMenuProps
   const pathname = usePathname();
   const [activeKey, setActiveKey] = useState<string>(() => "home");
   const isVertical = orientation === "vertical";
+
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>, item: (typeof items)[number]) => {
+    if (pathname === "/" && item.key === "home") {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   // Scroll spy for home page
   useEffect(() => {
@@ -27,7 +36,14 @@ export const NavMenu = ({ className, orientation, ...rest }: NavigationMenuProps
       const scrollY = window.scrollY;
       const offset = 160; // adjust so it switches a bit after section top
 
-      const sectionOrder: { key: string; id?: string }[] = [{ key: "home" }, { key: "services", id: "services" }, { key: "clients", id: "clients" }, { key: "team", id: "team" }];
+      const sectionOrder: { key: string; id?: string }[] = [
+        { key: "home" },
+        { key: "services", id: "services" },
+        { key: "faq", id: "faq" },
+        { key: "clients", id: "clients" },
+        { key: "testimonials", id: "testimonials" },
+        { key: "team", id: "team" },
+      ];
 
       let currentKey = "home";
 
@@ -67,6 +83,7 @@ export const NavMenu = ({ className, orientation, ...rest }: NavigationMenuProps
               {isActive && <motion.div layoutId="nav-pill" className="absolute inset-0 rounded-full bg-foreground shadow-sm" transition={{ type: "spring", stiffness: 380, damping: 30 }} />}
               <Link
                 href={item.href}
+                onClick={(event) => handleClick(event, item)}
                 className={cn(
                   "relative px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-medium rounded-full whitespace-nowrap transition-colors",
                   "transition-transform duration-150 hover:scale-[1.03]",

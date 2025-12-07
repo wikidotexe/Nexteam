@@ -1,9 +1,11 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { VisuallyHidden as VisuallyHiddenPrimitive } from "radix-ui";
 import { Menu } from "lucide-react";
+import Link from "next/link";
 import { Logo } from "./logo";
-import { NavMenu } from "./nav-menu";
 
 export const NavigationSheet = () => {
   return (
@@ -16,12 +18,52 @@ export const NavigationSheet = () => {
           <Menu />
         </Button>
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent
+        // Prevent auto-focus from scrolling back to the burger button when closing
+        onCloseAutoFocus={(event) => {
+          event.preventDefault();
+        }}
+      >
         <Logo />
-        <NavMenu orientation="vertical" className="mt-12" />
+
+        {/* Simple vertical list navigation for mobile */}
+        <nav className="mt-10 space-y-3 text-sm">
+          <SheetClose asChild>
+            <Link href="/" className="block rounded-lg px-3 py-2 hover:bg-muted">
+              Home
+            </Link>
+          </SheetClose>
+          <SheetClose asChild>
+            <Link href="/#services" className="block rounded-lg px-3 py-2 hover:bg-muted">
+              Services
+            </Link>
+          </SheetClose>
+          <SheetClose asChild>
+            <Link href="/#faq" className="block rounded-lg px-3 py-2 hover:bg-muted">
+              FAQ
+            </Link>
+          </SheetClose>
+          <SheetClose asChild>
+            <Link href="/#clients" className="block rounded-lg px-3 py-2 hover:bg-muted">
+              Clients
+            </Link>
+          </SheetClose>
+          <SheetClose asChild>
+            <Link href="/#testimonials" className="block rounded-lg px-3 py-2 hover:bg-muted">
+              Testimonials
+            </Link>
+          </SheetClose>
+          <SheetClose asChild>
+            <Link href="/#team" className="block rounded-lg px-3 py-2 hover:bg-muted">
+              Our Team
+            </Link>
+          </SheetClose>
+        </nav>
 
         <div className="mt-8 space-y-4">
-          <Button className="w-full xs:hidden">Get Started</Button>
+          <Button asChild className="w-full xs:hidden rounded-full">
+            <Link href="/contact">Get Started</Link>
+          </Button>
         </div>
       </SheetContent>
     </Sheet>
