@@ -38,18 +38,26 @@ const footerSections = [
         title: "Projects",
         href: "/project",
       },
+      {
+        title: "Blog",
+        href: "/",
+      },
     ],
   },
   {
     title: "Legal",
     links: [
       {
-        title: "Terms & Conditions",
+        title: "Terms",
         href: "/terms",
       },
       {
-        title: "Privacy Policy",
+        title: "Privacy",
         href: "/privacy",
+      },
+      {
+        title: "License",
+        href: "/license",
       },
     ],
   },
@@ -80,8 +88,8 @@ const Footer = () => {
           <div className="col-span-full xl:col-span-2">
             {/* Logo */}
             <div className="flex flex-col items-start gap-3">
-              <div className="relative h-14 w-44">
-                <Image src="/logo/logo.webp" alt="NoFileExistsHere logo" fill sizes="(min-width: 1024px) 11rem, (min-width: 640px) 10rem, 9rem" className="object-contain object-left" />
+              <div className="relative h-25 w-25">
+                <Image src="/logo/logo.webp" alt="NoFileExistsHere logo" fill sizes="(min-width: 1024px) 13rem, (min-width: 640px) 11rem, 10rem" className="object-contain object-left" />
               </div>
               <Logo />
             </div>
@@ -132,7 +140,7 @@ const Footer = () => {
 
       {/* Huge decorative text at the very bottom */}
       <div className="pointer-events-none select-none absolute inset-x-0 -bottom-10 sm:-bottom-44 md:-bottom-80 flex justify-center">
-        <span className="font-bold tracking-[0.15em] text-[16vw] sm:text-[12vw] md:text-[10vw] leading-none text-foreground/5">NEXTEAM</span>
+        <span className="font-mono font-bold tracking-[0.001em] text-[16vw] sm:text-[12vw] md:text-[10vw] leading-none text-foreground/5">NoFileExitsHere</span>
       </div>
     </footer>
   );

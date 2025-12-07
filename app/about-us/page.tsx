@@ -12,8 +12,8 @@ const AboutUsPage = () => {
         <RevealOnScroll>
           <h1 className="text-3xl xs:text-4xl md:text-5xl font-bold tracking-tight">About Us</h1>
           <p className="mt-2 max-w-2xl text-muted-foreground">
-            Nexteam adalah tim kecil yang fokus membantu bisnis dan personal brand membangun solusi digital yang sederhana, cepat, dan mudah dirawat. Kami menggabungkan pengalaman di bidang pengembangan web, mobile, sistem, dan desain untuk
-            menghadirkan hasil yang nyata bagi klien.
+            Nexteam adalah tim kecil di bawah naungan TEKNOLOGI KREASI DIGITAL yang fokus membantu bisnis dan personal brand membangun solusi digital yang sederhana, cepat, dan mudah dirawat. Kami menggabungkan pengalaman di bidang
+            pengembangan web, mobile, sistem, dan desain untuk menghadirkan hasil yang nyata bagi klien.
           </p>
         </RevealOnScroll>
 

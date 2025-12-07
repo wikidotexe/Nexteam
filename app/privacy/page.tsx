@@ -11,7 +11,9 @@ const PrivacyPage = () => {
       <section className="max-w-(--breakpoint-xl) mx-auto w-full py-12 xs:py-20 px-6 space-y-10">
         <RevealOnScroll>
           <h1 className="text-3xl xs:text-4xl md:text-5xl font-bold tracking-tight">Privacy Policy</h1>
-          <p className="mt-2 max-w-2xl text-muted-foreground">Kebijakan privasi ini menjelaskan bagaimana Nexteam mengumpulkan, menggunakan, dan melindungi data pribadi Anda saat menggunakan website dan layanan kami.</p>
+          <p className="mt-2 max-w-2xl text-muted-foreground">
+            Kebijakan privasi ini menjelaskan bagaimana Nexteam sebagai penyedia jasa untuk usaha mikro dan kecil di Indonesia mengumpulkan, menggunakan, dan melindungi data pribadi Anda saat menggunakan website dan layanan kami.
+          </p>
         </RevealOnScroll>
 
         <RevealOnScroll delay={0.05}>
@@ -19,15 +21,42 @@ const PrivacyPage = () => {
             <div className="space-y-4 max-w-3xl text-sm md:text-base leading-relaxed text-muted-foreground">
               <section>
                 <h2 className="text-base font-semibold text-foreground mb-2">1. Data yang Kami Kumpulkan</h2>
-                <p>Kami dapat mengumpulkan informasi seperti nama, alamat email, nomor telepon, dan detail kebutuhan yang Anda kirimkan melalui form kontak atau kanal komunikasi lainnya.</p>
+                <p>
+                  Kami dapat mengumpulkan data seperti nama, alamat email, nomor telepon, nama usaha, dan ringkasan kebutuhan project yang Anda kirimkan melalui form kontak, WhatsApp, atau kanal komunikasi lainnya. Untuk keperluan teknis,
+                  kami juga dapat meminta akses sementara ke akun hosting, domain, atau layanan pihak ketiga yang Anda gunakan.
+                </p>
               </section>
+
               <section>
-                <h2 className="text-base font-semibold text-foreground mb-2">2. Penggunaan Data</h2>
-                <p>Data yang Anda berikan digunakan untuk menindaklanjuti permintaan layanan, mengirim konfirmasi, dan meningkatkan kualitas layanan kami. Kami tidak menjual data pribadi Anda ke pihak ketiga.</p>
+                <h2 className="text-base font-semibold text-foreground mb-2">2. Cara Kami Menggunakan Data</h2>
+                <p>
+                  Data digunakan untuk menjawab pertanyaan Anda, menyiapkan penawaran, menjalankan project yang sudah disetujui, mengirimkan pemberitahuan terkait progres, serta melakukan perbaikan kualitas layanan. Kami tidak menggunakan
+                  data ini untuk iklan massal atau menjualnya ke pihak lain.
+                </p>
               </section>
+
               <section>
-                <h2 className="text-base font-semibold text-foreground mb-2">3. Keamanan Data</h2>
-                <p>Kami menerapkan langkah-langkah yang wajar untuk menjaga keamanan data pribadi Anda, namun tidak dapat menjamin keamanan absolut atas transmisi data melalui internet.</p>
+                <h2 className="text-base font-semibold text-foreground mb-2">3. Penyimpanan dan Keamanan</h2>
+                <p>
+                  Kami menyimpan data yang diperlukan seperlunya saja selama hubungan kerja masih berjalan dan untuk kepentingan pencatatan dasar. Akses ke data tersebut dibatasi hanya untuk tim yang memang perlu mengerjakan project Anda,
+                  dan kami berupaya menggunakan praktik yang wajar untuk menjaga kerahasiaan data.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-base font-semibold text-foreground mb-2">4. Berbagi Data dengan Pihak Ketiga</h2>
+                <p>
+                  Kami tidak menjual data pribadi Anda. Dalam beberapa kasus, data teknis dapat dibagikan secara terbatas kepada penyedia layanan terkait (misalnya penyedia hosting atau registrar domain) hanya jika diperlukan untuk
+                  menyelesaikan pekerjaan dan dengan tetap mengikuti ketentuan layanan pihak tersebut.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-base font-semibold text-foreground mb-2">5. Hak Anda atas Data</h2>
+                <p>
+                  Anda dapat meminta kami memperbarui atau menghapus data kontak yang kami simpan, sejauh tidak bertentangan dengan kewajiban pencatatan yang diwajibkan oleh regulasi. Anda juga dapat meminta kami melupakan kredensial
+                  sementara (misalnya password sementara) setelah project selesai.
+                </p>
               </section>
             </div>
 
