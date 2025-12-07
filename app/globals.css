@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin 'tailwindcss-animate';
 
@@ -109,7 +109,7 @@
   --chart-3: hsl(197 37% 24%);
   --chart-4: hsl(43 74% 66%);
   --chart-5: hsl(27 87% 67%);
-  --radius: 0.5rem
+  --radius: 0.5rem;
 }
 .dark {
   --background: hsl(0 0% 3.9%);
@@ -135,7 +135,7 @@
   --chart-2: hsl(160 60% 45%);
   --chart-3: hsl(30 80% 55%);
   --chart-4: hsl(280 65% 60%);
-  --chart-5: hsl(340 75% 55%)
+  --chart-5: hsl(340 75% 55%);
 }
 
 @layer base {
@@ -144,9 +144,13 @@
   }
   html {
     @apply scroll-smooth;
+    max-width: 100%;
+    overflow-x: hidden;
   }
   body {
     @apply bg-background text-foreground;
+    max-width: 100%;
+    overflow-x: hidden;
   }
   button {
     @apply cursor-pointer;
