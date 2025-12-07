@@ -81,10 +81,10 @@ const DesktopApplicationPage = () => {
                 <p>Ceritakan alur kerja dan masalah yang ingin diselesaikan, kami bantu terjemahkan menjadi aplikasi desktop yang mudah digunakan tim Anda.</p>
                 <div className="hidden md:flex flex-wrap gap-3 pt-2">
                   <Button asChild size="sm" className="rounded-full">
-                    <Link href="/">Ke Halaman Utama</Link>
+                    <Link href="/">Back To Home</Link>
                   </Button>
                   <Button asChild size="sm" variant="outline" className="rounded-full">
-                    <Link href="/#services">Kembali ke Services</Link>
+                    <Link href="/#services">Back To Services</Link>
                   </Button>
                 </div>
               </section>
@@ -106,10 +106,10 @@ const DesktopApplicationPage = () => {
         {/* Mobile-only CTA buttons at very bottom (after all text content) */}
         <div className="mt-8 md:hidden flex flex-wrap gap-3">
           <Button asChild size="sm" className="flex-1 rounded-full justify-center">
-            <Link href="/">Ke Halaman Utama</Link>
+            <Link href="/">Back To Home</Link>
           </Button>
           <Button asChild size="sm" variant="outline" className="flex-1 rounded-full justify-center">
-            <Link href="/#services">Kembali ke Services</Link>
+            <Link href="/#services">Back To Services</Link>
           </Button>
         </div>
       </section>
