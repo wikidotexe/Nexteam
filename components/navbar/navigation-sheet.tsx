@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetClose, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { VisuallyHidden as VisuallyHiddenPrimitive } from "radix-ui";
 import { Menu } from "lucide-react";
 import Link from "next/link";
@@ -12,6 +12,7 @@ export const NavigationSheet = () => {
     <Sheet>
       <VisuallyHiddenPrimitive.Root>
         <SheetTitle>Navigation Drawer</SheetTitle>
+        <SheetDescription>Daftar tautan navigasi utama Nexteam.</SheetDescription>
       </VisuallyHiddenPrimitive.Root>
       <SheetTrigger asChild>
         <Button variant="outline" size="icon">
