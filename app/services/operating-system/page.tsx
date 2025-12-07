@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     description: "Kami membantu menyiapkan dan mengoptimalkan sistem operasi Windows dan Linux untuk kebutuhan server maupun workstation di lingkungan kerja Anda.",
     url: "/services/operating-system",
     type: "website",
+    images: [
+      {
+        url: "/services/operating sistem.webp",
+        width: 1200,
+        height: 630,
+        alt: "Operating System service preview by NoFileExistsHere (Nexteam)",
+      },
+    ],
   },
 };
 

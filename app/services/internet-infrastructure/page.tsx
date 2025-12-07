@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     description: "Kami membantu menyiapkan jaringan kantor, server, dan infrastruktur internet yang terdokumentasi rapi dan mudah di-maintain.",
     url: "/services/internet-infrastructure",
     type: "website",
+    images: [
+      {
+        url: "/services/internet.webp",
+        width: 1200,
+        height: 630,
+        alt: "Internet & Infrastructure service preview by NoFileExistsHere (Nexteam)",
+      },
+    ],
   },
 };
 

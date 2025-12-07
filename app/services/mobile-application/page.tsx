@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     description: "Kami membantu membangun aplikasi mobile untuk kebutuhan bisnis, customer-facing, maupun MVP startup dengan pengalaman pengguna yang nyaman.",
     url: "/services/mobile-application",
     type: "website",
+    images: [
+      {
+        url: "/services/mobile.webp",
+        width: 1200,
+        height: 630,
+        alt: "Mobile Application service preview by NoFileExistsHere (Nexteam)",
+      },
+    ],
   },
 };
 

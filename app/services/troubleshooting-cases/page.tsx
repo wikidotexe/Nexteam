@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     description: "Kami membantu menganalisa dan menyelesaikan berbagai kasus gangguan teknis, dari server lambat, error aplikasi, hingga jaringan kantor yang tidak stabil.",
     url: "/services/troubleshooting-cases",
     type: "website",
+    images: [
+      {
+        url: "/services/troubleshooting.webp",
+        width: 1200,
+        height: 630,
+        alt: "Troubleshooting Cases service preview by NoFileExistsHere (Nexteam)",
+      },
+    ],
   },
 };
 

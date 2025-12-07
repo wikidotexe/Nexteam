@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     description: "Kami membantu menyusun tampilan visual brand melalui logo, konten media sosial, dan materi promosi dengan gaya yang rapi dan selaras dengan karakter bisnis Anda.",
     url: "/services/graphic-design",
     type: "website",
+    images: [
+      {
+        url: "/services/design.webp",
+        width: 1200,
+        height: 630,
+        alt: "Graphic Design service preview by NoFileExistsHere (Nexteam)",
+      },
+    ],
   },
 };
 
