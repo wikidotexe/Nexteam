@@ -1,9 +1,12 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import RevealOnScroll from "./animation/reveal-on-scroll";
 import { ArrowUpRight, CirclePlay } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
@@ -27,12 +30,12 @@ const Hero = () => {
           </div>
         </RevealOnScroll>
         <RevealOnScroll delay={0.1}>
-          <div className="relative lg:max-w-lg xl:max-w-xl w-full rounded-xl aspect-square h-72 md:h-[600px]">
+          <motion.div className="relative lg:max-w-lg xl:max-w-xl w-full rounded-xl aspect-square h-72 md:h-[600px]" animate={{ y: [0, -14, 0] }} transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}>
             {/* Light mode image */}
             <Image src="/hero/hero-putih.png" fill alt="" sizes="(min-width: 1024px) 32rem, (min-width: 768px) 28rem, 20rem" priority className="object-cover rounded-xl block dark:hidden" />
             {/* Dark mode image */}
             <Image src="/hero/hero-hitam.png" fill alt="" sizes="(min-width: 1024px) 32rem, (min-width: 768px) 28rem, 20rem" priority className="object-cover rounded-xl hidden dark:block" />
-          </div>
+          </motion.div>
         </RevealOnScroll>
       </div>
     </div>

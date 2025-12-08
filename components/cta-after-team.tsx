@@ -11,7 +11,7 @@ const CtaAfterTeam = () => {
           <p className="mt-3 text-sm xs:text-base text-muted-foreground">Diskusikan kebutuhan bisnis Anda bersama kami. Kami bantu merancang solusi teknologi yang tepat, efisien, dan siap membantu bisnis Anda tumbuh.</p>
           <div className="mt-6 flex justify-center">
             <Button asChild size="lg" className="rounded-full px-8">
-              <Link href="/contact">Let's connect</Link>
+              <Link href="/contact">Let&apos;s connect</Link>
             </Button>
           </div>
         </div>
