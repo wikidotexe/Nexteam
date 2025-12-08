@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import RevealOnScroll from "./animation/reveal-on-scroll";
-import { AppWindow, Code, Cpu, Globe2, LifeBuoy, Monitor, Palette, Smartphone } from "lucide-react";
+import { AppWindow, Code, Cpu, Globe2, LifeBuoy, Monitor, Palette, Smartphone, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -69,8 +69,14 @@ const Service = () => {
               <Link href={`/services/${service.slug}`} aria-label={service.title} className="block group h-full">
                 <Card className="flex h-full flex-col overflow-hidden rounded-xl border bg-card shadow-sm transition-transform duration-150 group-hover:-translate-y-0.5">
                   <CardContent className="px-0 pt-0 pb-0">
-                    <div className="relative w-full aspect-[16/9] bg-muted">
-                      <Image src={service.image} alt={service.title} fill className="object-cover transition-transform duration-200 group-hover:scale-[1.02]" />
+                    <div className="relative w-full aspect-[16/9] bg-muted overflow-hidden">
+                      <Image src={service.image} alt={service.title} fill className="object-cover transition-transform duration-300 group-hover:scale-[1.05]" />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        <div className="flex h-11 w-11 items-center justify-center rounded-full bg-background/90 shadow-md">
+                          <Search className="h-5 w-5" />
+                        </div>
+                      </div>
                     </div>
                   </CardContent>
                   <CardHeader className="flex-1 px-6 pb-6 pt-5">

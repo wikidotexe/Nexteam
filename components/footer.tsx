@@ -7,7 +7,7 @@ import { Logo } from "./navbar/logo";
 
 const footerSections = [
   {
-    title: "Other Place",
+    title: "Other Places",
     links: [
       {
         title: "Fastwork",

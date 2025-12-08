@@ -65,49 +65,32 @@ const WebDevelopmentPage = () => {
             {/* Main copy */}
             <div className="space-y-6 text-sm md:text-base leading-relaxed text-muted-foreground">
               <section className="space-y-2">
-                <h2 className="text-lg md:text-xl font-semibold text-foreground">Kenapa Harus Pilih Kami?</h2>
-                <p>Kami tidak hanya membuat tampilan yang bagus, tetapi juga memikirkan struktur informasi, kecepatan loading, dan kemudahan Anda dalam mengelola konten sehari-hari.</p>
+                <h2 className="text-lg md:text-xl font-semibold text-foreground">Jenis Website yang Kami Bangun</h2>
                 <ul className="mt-2 list-disc pl-5 space-y-1">
-                  <li>Desain modern yang selaras dengan identitas brand Anda.</li>
-                  <li>Struktur SEO-friendly agar mudah ditemukan di mesin pencari.</li>
-                  <li>Performa optimal dengan praktik terbaik Next.js &amp; React.</li>
-                  <li>Integrasi dengan tool yang sudah Anda gunakan (CMS, pembayaran, dll.).</li>
+                  <li>Landing page untuk campaign, produk, atau layanan tertentu.</li>
+                  <li>Website company profile dengan halaman layanan, tentang kami, dan kontak yang jelas.</li>
+                  <li>Blog atau konten edukasi untuk membangun kepercayaan dan visibilitas di mesin pencari.</li>
+                  <li>Web app sederhana untuk kebutuhan internal (dashboard, form terintegrasi, dsb.).</li>
                 </ul>
               </section>
 
               <section className="space-y-2">
-                <h2 className="text-lg md:text-xl font-semibold text-foreground">Fitur yang Bisa Kami Tambahkan</h2>
-                <ul className="mt-2 list-disc pl-5 space-y-1">
-                  <li>Halaman landing untuk campaign, produk, atau event tertentu.</li>
-                  <li>Blog / artikel untuk mengelola konten edukasi dan berita terbaru.</li>
-                  <li>Formulir kontak, booking, atau pendaftaran yang terhubung ke email / WhatsApp.</li>
-                  <li>Dashboard admin sederhana untuk mengelola konten tanpa perlu sentuh kode.</li>
-                </ul>
-              </section>
-
-              <section className="space-y-2">
-                <h2 className="text-lg md:text-xl font-semibold text-foreground">Cara Kerja Kami</h2>
+                <h2 className="text-lg md:text-xl font-semibold text-foreground">Pendekatan Pengerjaan</h2>
                 <ol className="mt-2 list-decimal pl-5 space-y-1">
-                  <li>Diskusi kebutuhan dan tujuan website secara detail.</li>
-                  <li>Penyusunan struktur halaman dan wireframe.</li>
-                  <li>Desain visual dan konfirmasi dengan Anda sebelum development.</li>
-                  <li>Development bertahap dengan update rutin.</li>
-                  <li>Testing, revisi akhir, dan handover dokumentasi singkat.</li>
+                  <li>Pengumpulan informasi tentang tujuan website, target pengguna, dan referensi desain.</li>
+                  <li>Penyusunan struktur halaman dan wireframe sederhana agar alur jelas.</li>
+                  <li>Pembuatan desain antarmuka dan konfirmasi dengan Anda sebelum masuk tahap coding.</li>
+                  <li>Development bertahap dengan update rutin, termasuk integrasi formulir dan analitik bila dibutuhkan.</li>
+                  <li>Testing di beberapa perangkat, revisi akhir, dan handover dokumentasi singkat.</li>
                 </ol>
               </section>
 
               <section className="space-y-2">
-                <h2 className="text-lg md:text-xl font-semibold text-foreground">Cocok Untuk</h2>
-                <ul className="mt-2 list-disc pl-5 space-y-1">
-                  <li>Bisnis yang butuh website profesional sebagai wajah online.</li>
-                  <li>Perusahaan yang ingin upgrade website lama ke versi lebih modern.</li>
-                  <li>Personal brand, portofolio, atau landing page campaign.</li>
-                </ul>
-              </section>
-
-              <section className="space-y-2">
-                <h2 className="text-lg md:text-xl font-semibold text-foreground">Hubungi Kami Sekarang</h2>
-                <p>Punya ide project atau ingin konsultasi dulu? Silakan hubungi kami melalui halaman kontak, kami siap membantu mewujudkan website yang sesuai dengan kebutuhan dan bahasa brand Anda.</p>
+                <h2 className="text-lg md:text-xl font-semibold text-foreground">Siap Membantu Bisnis Anda Online</h2>
+                <p>
+                  Sampaikan jenis website yang Anda butuhkan dan apa yang ingin dicapai, kami bantu rekomendasikan struktur, fitur, dan teknologi yang realistis untuk usaha Anda. Website disiapkan agar mudah dirawat dan bisa dikembangkan
+                  lagi di kemudian hari.
+                </p>
                 {/* Desktop CTA buttons */}
                 <div className="hidden md:flex flex-wrap gap-3 pt-2">
                   <Button asChild size="sm" className="rounded-full">

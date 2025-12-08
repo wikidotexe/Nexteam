@@ -7,6 +7,7 @@ import OurClients from "@/components/our-clients";
 import OurTeam from "@/components/ourteam";
 import Testimonial from "@/components/testimonial";
 import WhatsAppBubble from "@/components/whatsapp-bubble";
+import CtaAfterTeam from "@/components/cta-after-team";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <OurClients />
       <Testimonial />
       <OurTeam />
+      <CtaAfterTeam />
       <Footer />
       <WhatsAppBubble />
     </>
