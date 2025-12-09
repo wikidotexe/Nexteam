@@ -13,8 +13,10 @@ export const posts: BlogPost[] = [
     excerpt: "Beberapa hal praktis yang kami pelajari ketika menangani kasus jaringan di kantor klien, supaya downtime bisa ditekan seminimal mungkin.",
     tag: "Infrastructure",
     content: [
-      "Saat menangani kasus jaringan di lokasi klien, masalah jarang sekali sama persis antara satu tempat dengan tempat lain. Namun, ada beberapa pola yang selalu kami temukan dan bisa dijadikan checklist sederhana sebelum panik.",
-      "Mulai dari pengecekan fisik kabel dan port, dokumentasi topologi yang rapi, sampai cara berkomunikasi dengan tim internal klien, semua berpengaruh ke seberapa cepat masalah bisa diselesaikan.",
+      "Troubleshooting jaringan di lapangan itu kadang kayak detektif: tempatnya beda, gejalanya beda, tapi polanya sering mirip. Makanya, kami selalu mulai dengan checklist kecil sebelum masuk ke analisa yang lebih rumit.",
+      "Hal yang paling sering menyelamatkan waktu? Cek fisik. Kabel yang kegencet meja, patch cord yang longgar, hingga switch yang panas berlebih—masalah simpel kayak gini ternyata penyebab downtime yang paling sering kami temukan.",
+      "Setelah itu, dokumentasi topologi jadi penyelamat kedua. Foto rack, catatan port, dan skema sederhana bikin proses tracing jauh lebih cepat, apalagi kalau project-nya 'warisan' dari teknisi sebelumnya.",
+      "Dan terakhir, komunikasi. Nggak sedikit kasus yang ternyata salah paham antara tim internal dan user. Dengan informasi yang jelas sejak awal, proses troubleshooting bisa selesai dalam hitungan menit, bukan jam.",
     ],
   },
   {

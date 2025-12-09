@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 const BlogPage = () => {
   return (
-    <main className="min-h-[calc(100vh-4rem)] w-full border-b border-accent">
+    <main className="min-h-[calc(100vh-4rem)] w-full">
       <section className="max-w-(--breakpoint-xl) mx-auto w-full py-12 xs:py-20 px-6 space-y-10">
         <RevealOnScroll>
           <div className="space-y-3 text-center mb-6 md:mb-8">

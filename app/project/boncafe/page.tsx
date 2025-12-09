@@ -112,13 +112,6 @@ const BoncafeProjectPage = () => {
                 <h3 className="text-base font-semibold text-foreground">Tipe Project</h3>
                 <p>Internet &amp; Infrastructure / Network Optimization</p>
               </section>
-
-              <section className="space-y-2">
-                <h3 className="text-base font-semibold text-foreground">Referensi Artikel</h3>
-                <Link href="https://www.nofileexistshere.my.id/blog/11" target="_blank" className="text-foreground underline underline-offset-4">
-                  Baca detail studi kasus di blog kami
-                </Link>
-              </section>
             </div>
           </div>
         </RevealOnScroll>
