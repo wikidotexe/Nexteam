@@ -28,8 +28,10 @@ const BoncafeProjectPage = () => {
     <main className="min-h-[calc(100vh-4rem)] w-full border-b border-accent">
       <section className="max-w-(--breakpoint-xl) mx-auto w-full py-10 xs:py-14 px-6 space-y-10">
         <RevealOnScroll>
-          <div className="space-y-3">
+          <div className="space-y-3 text-center mb-6 md:mb-8">
+            <h1 className="text-3xl xs:text-4xl md:text-5xl font-bold tracking-tight">Optimasi Jaringan PT BON CAFE INDONESIA</h1>
             <p className="text-xs xs:text-sm text-muted-foreground">
+              <br />
               <Link href="/" className="hover:text-foreground">
                 Home
               </Link>{" "}
@@ -39,8 +41,8 @@ const BoncafeProjectPage = () => {
               </Link>{" "}
               / <span className="text-foreground font-medium">Optimasi Jaringan PT BON CAFE INDONESIA</span>
             </p>
-            <h1 className="text-3xl xs:text-4xl md:text-5xl font-bold tracking-tight">Optimasi Jaringan PT BON CAFE INDONESIA</h1>
-            <p className="max-w-2xl text-muted-foreground text-sm md:text-base">
+            <br />
+            <p className="max-w-2xl mx-auto text-muted-foreground text-sm md:text-base">
               Studi kasus optimasi jaringan di salah satu cabang PT BON CAFE INDONESIA untuk meningkatkan stabilitas koneksi, mengurangi downtime, dan memudahkan monitoring infrastruktur yang sudah berjalan cukup lama.
             </p>
           </div>
