@@ -4,13 +4,11 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { posts } from "../posts-data";
 
-interface BlogDetailPageProps {
-  params: {
-    slug: string;
-  };
+interface BlogDetailPageParams {
+  slug: string;
 }
 
-export const generateMetadata = ({ params }: BlogDetailPageProps): Metadata => {
+export const generateMetadata = ({ params }: { params: BlogDetailPageParams }): Metadata => {
   const post = posts.find((p) => p.slug === params.slug);
 
   if (!post) {
@@ -30,6 +28,10 @@ export const generateMetadata = ({ params }: BlogDetailPageProps): Metadata => {
     },
   };
 };
+
+interface BlogDetailPageProps {
+  params: BlogDetailPageParams;
+}
 
 const BlogDetailPage = ({ params }: BlogDetailPageProps) => {
   const post = posts.find((p) => p.slug === params.slug);
