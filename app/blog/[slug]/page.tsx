@@ -4,12 +4,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { posts } from "../posts-data";
 
-interface BlogDetailPageParams {
-  slug: string;
-}
-
-export const generateMetadata = ({ params }: { params: BlogDetailPageParams }): Metadata => {
-  const post = posts.find((p) => p.slug === params.slug);
+export const generateMetadata = async ({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> => {
+  const { slug } = await params;
+  const post = posts.find((p) => p.slug === slug);
 
   if (!post) {
     return {
@@ -29,12 +26,9 @@ export const generateMetadata = ({ params }: { params: BlogDetailPageParams }): 
   };
 };
 
-interface BlogDetailPageProps {
-  params: BlogDetailPageParams;
-}
-
-const BlogDetailPage = ({ params }: BlogDetailPageProps) => {
-  const post = posts.find((p) => p.slug === params.slug);
+const BlogDetailPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
+  const { slug } = await params;
+  const post = posts.find((p) => p.slug === slug);
 
   if (!post) {
     return (
