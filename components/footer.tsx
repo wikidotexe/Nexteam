@@ -24,12 +24,8 @@ const footerSections = [
     ],
   },
   {
-    title: "Resources",
+    title: "Company",
     links: [
-      {
-        title: "Contact",
-        href: "/contact",
-      },
       {
         title: "About Us",
         href: "/about-us",
@@ -39,8 +35,8 @@ const footerSections = [
         href: "/project",
       },
       {
-        title: "Blog",
-        href: "/",
+        title: "Contact",
+        href: "/contact",
       },
     ],
   },
@@ -58,6 +54,23 @@ const footerSections = [
       {
         title: "License",
         href: "/license",
+      },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      {
+        title: "Blog",
+        href: "/blog",
+      },
+      {
+        title: "Media",
+        href: "/",
+      },
+      {
+        title: "Store",
+        href: "/store",
       },
     ],
   },
