@@ -10,17 +10,27 @@ import {
   Play, 
   RotateCcw,
   Gauge,
-  ArrowLeft
+  ArrowLeft,
+  Share2,
+  CheckCircle2,
+  Zap,
+  MonitorPlay,
+  Globe
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 interface SpeedStats {
   ping: number | null;
   download: number | null;
   upload: number | null;
+}
+
+interface SpeedHistory {
+  download: number[];
+  upload: number[];
 }
 
 interface NetworkInfo {
@@ -36,6 +46,10 @@ export default function SpeedtestUI() {
     ping: null,
     download: null,
     upload: null,
+  });
+  const [history, setHistory] = useState<SpeedHistory>({
+    download: [],
+    upload: [],
   });
   const [currentValue, setCurrentValue] = useState(0);
   const [networkInfo, setNetworkInfo] = useState<NetworkInfo>({
@@ -148,6 +162,7 @@ const runUploadTest = async (
   const startTest = useCallback(async () => {
     setTesting(true);
     setStats({ ping: null, download: null, upload: null });
+    setHistory({ download: [], upload: [] });
     
     // Ping Phase
     setPhase("ping");
@@ -162,19 +177,35 @@ const runUploadTest = async (
     // Download Phase
     setPhase("download");
     setCurrentValue(0);
-    const dlSpeed = await runDownloadTest((s) => setCurrentValue(s));
+    const dlSpeed = await runDownloadTest((s) => {
+        setCurrentValue(s);
+        setHistory(prev => ({ ...prev, download: [...prev.download.slice(-19), s] }));
+    });
     setStats(prev => ({ ...prev, download: dlSpeed }));
     
     // Upload Phase
     setPhase("upload");
     setCurrentValue(0);
-    const ulSpeed = await runUploadTest((s) => setCurrentValue(s));
+    const ulSpeed = await runUploadTest((s) => {
+        setCurrentValue(s);
+        setHistory(prev => ({ ...prev, upload: [...prev.upload.slice(-19), s] }));
+    });
     setStats(prev => ({ ...prev, upload: ulSpeed }));
     
     setPhase("finished");
     setTesting(false);
     setCurrentValue(0);
-  }, []);
+  }, [runPingTest, runDownloadTest, runUploadTest]);
+
+  const getPerformanceRating = () => {
+    const dl = stats.download || 0;
+    if (dl > 100) return { label: "Excellent", desc: "Perfect for 4K streaming, gaming, and large file transfers.", icon: <Zap className="w-6 h-6 text-yellow-500" /> };
+    if (dl > 50) return { label: "Very Good", desc: "Great for HD streaming on multiple devices and video calls.", icon: <MonitorPlay className="w-6 h-6 text-blue-500" /> };
+    if (dl > 25) return { label: "Good", desc: "Reliable for HD streaming and smooth web browsing.", icon: <CheckCircle2 className="w-6 h-6 text-emerald-500" /> };
+    return { label: "Standard", desc: "Suitable for basic browsing, email, and music streaming.", icon: <Globe className="w-6 h-6 text-muted-foreground" /> };
+  };
+
+  const rating = getPerformanceRating();
 
   return (
     <div className="w-full max-w-4xl mx-auto p-4 space-y-8 relative">
@@ -212,6 +243,7 @@ const runUploadTest = async (
             icon={<ArrowDown className="w-5 h-5 text-blue-500" />}
             active={phase === "download"}
             color="blue"
+            history={history.download}
         />
         <StatCard 
             title="Upload" 
@@ -220,97 +252,145 @@ const runUploadTest = async (
             icon={<ArrowUp className="w-5 h-5 text-purple-500" />}
             active={phase === "upload"}
             color="purple"
+            history={history.upload}
         />
       </div>
 
-      <Card className="relative overflow-hidden border-2 border-primary/10 shadow-xl bg-card/50 backdrop-blur-sm">
-        <CardContent className="p-8 md:p-12 flex flex-col items-center justify-center min-h-[400px]">
-          <div className="relative w-64 h-64 md:w-80 md:h-80">
-            {/* Gauge Background */}
-            <svg className="w-full h-full -rotate-90 transform" viewBox="0 0 100 100">
-              <circle
-                cx="50"
-                cy="50"
-                r="45"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="8"
-                className="text-muted/20"
-                strokeDasharray="212 283"
-                strokeLinecap="round"
-              />
-              {/* Active Gauge */}
-              <motion.circle
-                cx="50"
-                cy="50"
-                r="45"
-                fill="none"
-                stroke="url(#gaugeGradient)"
-                strokeWidth="8"
-                strokeDasharray={`${(currentValue / 100) * 212} 283`}
-                strokeLinecap="round"
-                className="transition-all duration-300 ease-out"
-                animate={{
-                    strokeDasharray: `${Math.min((currentValue / 100) * 212, 212)} 283`
-                }}
-              />
-              <defs>
-                <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor={phase === "ping" ? "#10b981" : phase === "download" ? "#3b82f6" : phase === "upload" ? "#a855f7" : "#3b82f6"} />
-                  <stop offset="100%" stopColor={phase === "ping" ? "#34d399" : phase === "download" ? "#60a5fa" : phase === "upload" ? "#c084fc" : "#8b5cf6"} />
-                </linearGradient>
-              </defs>
-            </svg>
+      <Card className="relative overflow-hidden border-2 border-primary/10 shadow-xl bg-card/50 backdrop-blur-sm min-h-[450px] transition-all duration-500">
+        <CardContent className="p-8 md:p-12 flex flex-col items-center justify-center h-full">
+          <AnimatePresence mode="wait">
+            {phase !== "finished" ? (
+              <motion.div 
+                key="gauge-view"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                className="flex flex-col items-center"
+              >
+                <div className="relative w-64 h-64 md:w-80 md:h-80">
+                  {/* Gauge Background */}
+                  <svg className="w-full h-full -rotate-90 transform" viewBox="0 0 100 100">
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="8"
+                      className="text-muted/20"
+                      strokeDasharray="212 283"
+                      strokeLinecap="round"
+                    />
+                    {/* Active Gauge */}
+                    <motion.circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      fill="none"
+                      stroke="url(#gaugeGradient)"
+                      strokeWidth="8"
+                      strokeDasharray={`${(currentValue / 100) * 212} 283`}
+                      strokeLinecap="round"
+                      className="transition-all duration-300 ease-out"
+                      animate={{
+                          strokeDasharray: `${Math.min((currentValue / 100) * 212, 212)} 283`
+                      }}
+                    />
+                    <defs>
+                      <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor={phase === "ping" ? "#10b981" : phase === "download" ? "#3b82f6" : phase === "upload" ? "#a855f7" : "#3b82f6"} />
+                        <stop offset="100%" stopColor={phase === "ping" ? "#34d399" : phase === "download" ? "#60a5fa" : phase === "upload" ? "#c084fc" : "#8b5cf6"} />
+                      </linearGradient>
+                    </defs>
+                  </svg>
 
-            {/* Value Display */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={phase}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  className="mb-1"
-                >
-                  <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                    {phase === "idle" ? "Ready" : phase}
-                  </span>
-                </motion.div>
-              </AnimatePresence>
-              <div className="text-6xl md:text-7xl font-extrabold tracking-tighter tabular-nums">
-                {Math.floor(currentValue)}
-              </div>
-              <div className="text-muted-foreground font-medium">
-                {phase === "ping" ? "ms" : "Mbps"}
-              </div>
-            </div>
-          </div>
+                  {/* Value Display */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={phase}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        className="mb-1"
+                      >
+                        <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                          {phase === "idle" ? "Ready" : phase}
+                        </span>
+                      </motion.div>
+                    </AnimatePresence>
+                    <div className="text-6xl md:text-7xl font-extrabold tracking-tighter tabular-nums">
+                      {Math.floor(currentValue)}
+                    </div>
+                    <div className="text-muted-foreground font-medium">
+                      {phase === "ping" ? "ms" : "Mbps"}
+                    </div>
+                  </div>
+                </div>
 
-          <div className="mt-8">
-            <Button
-              size="lg"
-              className="px-12 py-6 text-lg font-bold rounded-full shadow-lg shadow-primary/25 transition-all hover:scale-105 active:scale-95"
-              disabled={testing}
-              onClick={startTest}
-            >
-              {testing ? (
-                <>
-                  <RotateCcw className="mr-2 h-5 w-5 animate-spin" />
-                  Testing...
-                </>
-              ) : phase === "finished" ? (
-                <>
-                  <RotateCcw className="mr-2 h-5 w-5" />
-                  Test Again
-                </>
-              ) : (
-                <>
-                  <Play className="mr-2 h-5 w-5 fill-current" />
-                  Start Speed Test
-                </>
-              )}
-            </Button>
-          </div>
+                <div className="mt-8">
+                  <Button
+                    size="lg"
+                    className="px-12 py-6 text-lg font-bold rounded-full shadow-lg shadow-primary/25 transition-all hover:scale-105 active:scale-95"
+                    disabled={testing}
+                    onClick={startTest}
+                  >
+                    {testing ? (
+                      <>
+                        <RotateCcw className="mr-2 h-5 w-5 animate-spin" />
+                        Testing...
+                      </>
+                    ) : (
+                      <>
+                        <Play className="mr-2 h-5 w-5 fill-current" />
+                        Start Speed Test
+                      </>
+                    )}
+                  </Button>
+                </div>
+              </motion.div>
+            ) : (
+              <motion.div 
+                key="result-view"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="w-full text-center space-y-8"
+              >
+                <div className="space-y-2">
+                  <div className="inline-flex p-3 rounded-full bg-primary/10 text-primary mb-4 animate-bounce">
+                    {rating.icon}
+                  </div>
+                  <h3 className="text-3xl font-bold tracking-tight">Your Speed is {rating.label}!</h3>
+                  <p className="text-muted-foreground max-w-md mx-auto">{rating.desc}</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto py-8 border-y">
+                   <ResultItem label="Ping" value={stats.ping ?? undefined} unit="ms" />
+                   <ResultItem label="Download" value={stats.download?.toFixed(1)} unit="Mbps" />
+                   <ResultItem label="Upload" value={stats.upload?.toFixed(1)} unit="Mbps" />
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full sm:w-auto px-10 py-6 rounded-full font-bold border-2"
+                  >
+                    <Share2 className="mr-2 h-5 w-5" />
+                    Share Result
+                  </Button>
+                  <Button
+                    size="lg"
+                    className="w-full sm:w-auto px-10 py-6 rounded-full font-bold shadow-lg shadow-primary/25 transition-all hover:scale-105 active:scale-95"
+                    onClick={startTest}
+                  >
+                    <RotateCcw className="mr-2 h-5 w-5" />
+                    Test Again
+                  </Button>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </CardContent>
       </Card>
 
@@ -329,13 +409,26 @@ const runUploadTest = async (
   );
 }
 
-function StatCard({ title, value, unit, icon, active, color }: { 
+function ResultItem({ label, value, unit }: { label: string, value: string | number | undefined, unit: string }) {
+  return (
+    <div className="flex flex-col items-center gap-1">
+      <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">{label}</span>
+      <div className="flex items-baseline gap-1">
+        <span className="text-3xl font-extrabold tabular-nums">{value ?? "---"}</span>
+        <span className="text-sm font-medium text-muted-foreground">{unit}</span>
+      </div>
+    </div>
+  );
+}
+
+function StatCard({ title, value, unit, icon, active, color, history }: { 
     title: string, 
     value: number | null, 
     unit: string, 
     icon: React.ReactNode, 
     active: boolean,
-    color: string
+    color: string,
+    history?: number[]
 }) {
   return (
     <Card className={cn(
@@ -347,19 +440,42 @@ function StatCard({ title, value, unit, icon, active, color }: {
         <CardTitle className="text-sm font-medium text-muted-foreground">{title}</CardTitle>
         {icon}
       </CardHeader>
-      <CardContent className="p-4 pt-0">
+      <CardContent className="p-4 pt-0 space-y-3">
         <div className="flex items-baseline gap-1">
           <span className="text-2xl font-bold tabular-nums">
             {value !== null ? (title === "Ping / Latency" ? value : value.toFixed(1)) : "---"}
           </span>
           <span className="text-xs text-muted-foreground font-medium">{unit}</span>
         </div>
+        
+        {/* Wave component */}
+        {(title === "Download" || title === "Upload") && (
+          <div className="h-8 flex items-end gap-0.5">
+            {Array.from({ length: 20 }).map((_, i) => {
+              const h = history && history[i] ? Math.min(Math.max((history[i] / 100) * 100, 10), 100) : 10;
+              return (
+                <motion.div
+                  key={i}
+                  className={cn(
+                    "flex-1 rounded-t-sm",
+                    color === "blue" ? "bg-blue-500/40" : "bg-purple-500/40",
+                    active && (color === "blue" ? "bg-blue-500" : "bg-purple-500")
+                  )}
+                  initial={{ height: "10%" }}
+                  animate={{ height: `${h}%` }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                />
+              );
+            })}
+          </div>
+        )}
+
         {active && (
             <motion.div 
                 className={cn("absolute bottom-0 left-0 h-1 bg-current", `text-${color}-500`)}
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
-                transition={{ duration: 5, ease: "linear" }}
+                transition={{ duration: 10, ease: "linear" }}
             />
         )}
       </CardContent>
