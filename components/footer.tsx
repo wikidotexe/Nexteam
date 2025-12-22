@@ -91,6 +91,15 @@ const footerSections = [
       },
     ],
   },
+  {
+    title: "Tools",
+    links: [
+      {
+        title: "Speedtest",
+        href: "/speedtest",
+      },
+    ],
+  },
 ];
 
 const Footer = () => {
