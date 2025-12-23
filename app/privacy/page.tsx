@@ -60,7 +60,7 @@ const PrivacyPage = () => {
               </section>
             </div>
 
-            <div className="relative w-full max-w-md mx-auto md:max-w-lg md:w-full h-72 sm:h-80 md:h-[420px]">
+            <div className="relative w-full max-w-md mx-auto md:max-w-lg md:w-full h-72 sm:h-80 md:h-105">
               <Image src="/privacy-policy/privacy.png" alt="Privacy Policy Illustration" fill className="object-contain" priority />
             </div>
           </div>

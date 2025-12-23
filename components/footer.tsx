@@ -104,7 +104,7 @@ const footerSections = [
 
 const Footer = () => {
   return (
-    <footer className="mt-12 xs:mt-20 relative border-t bg-gradient-to-b from-background to-background/80">
+    <footer className="mt-12 xs:mt-20 relative border-t bg-linear-to-b from-background to-background/80">
       <div className="relative max-w-(--breakpoint-xl) mx-auto py-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-x-8 gap-y-10 px-6">
         <RevealOnScroll>
           <div className="col-span-full xl:col-span-2">

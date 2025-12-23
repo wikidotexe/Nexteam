@@ -42,7 +42,7 @@ const AboutUsPage = () => {
               </section>
             </div>
 
-            <div className="relative w-full max-w-lg mx-auto md:max-w-xl md:w-full h-80 sm:h-96 md:h-[450px]">
+            <div className="relative w-full max-w-lg mx-auto md:max-w-xl md:w-full h-80 sm:h-96 md:h-112.5">
               <Image src="/aboutus/aboutus.png" alt="About Us Illustration" fill className="object-contain" priority />
             </div>
           </div>
