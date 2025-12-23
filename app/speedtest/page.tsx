@@ -6,7 +6,7 @@ import WhatsAppBubble from "@/components/whatsapp-bubble";
 export default function SpeedtestPage() {
   return (
     <div className="min-h-screen flex flex-col bg-background selection:bg-primary/10">
-      <main className="flex-grow pt-12 pb-12">
+      <main className="grow pt-12 pb-12">
         <SpeedtestUI />
       </main>
       <Footer />
