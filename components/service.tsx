@@ -60,7 +60,7 @@ const Service = () => {
   return (
     <div id="services" className="max-w-(--breakpoint-xl) mx-auto w-full py-12 xs:py-20 px-6">
       <RevealOnScroll>
-        <h2 className="text-3xl xs:text-4xl md:text-5xl md:leading-[3.5rem] font-bold tracking-tight sm:max-w-xl sm:text-center sm:mx-auto">Services We Provide to Grow Your Business</h2>
+        <h2 className="text-3xl xs:text-4xl md:text-5xl md:leading-14 font-bold tracking-tight sm:max-w-xl sm:text-center sm:mx-auto">Services We Provide to Grow Your Business</h2>
       </RevealOnScroll>
       <RevealOnScroll delay={0.05}>
         <div className="mt-8 xs:mt-14 w-full mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
@@ -69,9 +69,9 @@ const Service = () => {
               <Link href={`/services/${service.slug}`} aria-label={service.title} className="block group h-full">
                 <Card className="flex h-full flex-col overflow-hidden rounded-xl border bg-card shadow-sm transition-transform duration-150 group-hover:-translate-y-0.5">
                   <CardContent className="px-0 pt-0 pb-0">
-                    <div className="relative w-full aspect-[16/9] bg-muted overflow-hidden">
-                      <Image src={service.image} alt={service.title} fill className="object-cover transition-transform duration-300 group-hover:scale-[1.05]" />
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <div className="relative w-full aspect-video bg-muted overflow-hidden">
+                      <Image src={service.image} alt={service.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition-transform duration-300 group-hover:scale-[1.05]" />
+                      <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/70 via-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                       <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                         <div className="flex h-11 w-11 items-center justify-center rounded-full bg-background/90 shadow-md">
                           <Search className="h-5 w-5" />

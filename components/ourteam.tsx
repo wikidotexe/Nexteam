@@ -54,7 +54,7 @@ const OurTeam = () => {
               <div className="group bg-accent/60 border rounded-xl overflow-hidden h-full flex flex-col">
                 {/* Image */}
                 <div className="relative w-full aspect-square cursor-pointer" onClick={() => setActiveIndex((prev) => (prev === index ? null : index))}>
-                  <Image src={member.image} alt={member.name} fill className="object-cover" />
+                  <Image src={member.image} alt={member.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw" className="object-cover" />
                   {/* Social overlay */}
                   <div
                     className={cn(
