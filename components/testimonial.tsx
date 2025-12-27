@@ -57,12 +57,12 @@ const testimonials = [
 
 const Testimonial = () => {
   return (
-    <div id="testimonials" className="w-full max-w-(--breakpoint-xl) mx-auto py-6 xs:py-12 px-6">
+    <div id="testimonials" className="w-full max-w-7xl mx-auto py-6 xs:py-12 px-4 sm:px-6">
       <RevealOnScroll>
         <h2 className="mb-8 xs:mb-14 text-4xl md:text-5xl font-bold text-center tracking-tight">Testimonials</h2>
       </RevealOnScroll>
       <RevealOnScroll delay={0.05}>
-        <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <RevealOnScroll key={testimonial.id} delay={0.04 * index}>
               <TestimonialCard testimonial={testimonial} />
@@ -75,28 +75,28 @@ const Testimonial = () => {
 };
 
 const TestimonialCard = ({ testimonial }: { testimonial: (typeof testimonials)[number] }) => (
-  <div className="mb-8 bg-accent rounded-xl py-8 px-6 sm:py-6">
-    <div className="flex flex-col gap-4 sm:gap-6">
-      <div className="flex items-center justify-between gap-4">
-        <div className="flex items-center gap-4">
-          <Avatar className="w-10 h-10">
+  <div className="bg-accent rounded-xl py-6 px-4 sm:py-6 sm:px-6 h-full">
+    <div className="flex flex-col gap-4 sm:gap-6 h-full">
+      <div className="flex items-start justify-between gap-2 sm:gap-4">
+        <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
+          <Avatar className="w-10 h-10 shrink-0">
             <AvatarFallback className="text-xl font-medium bg-primary text-primary-foreground">{testimonial.name.charAt(0)}</AvatarFallback>
           </Avatar>
-          <div>
-            <p className="text-base sm:text-lg font-semibold">{testimonial.name}</p>
-            <p className="text-xs sm:text-sm text-gray-500">{testimonial.designation}</p>
+          <div className="min-w-0 flex-1">
+            <p className="text-base sm:text-lg font-semibold truncate">{testimonial.name}</p>
+            <p className="text-xs sm:text-sm text-gray-500 truncate">{testimonial.designation}</p>
           </div>
         </div>
-        <div className="flex items-center gap-1">
-          <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 stroke-yellow-500" />
-          <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 stroke-yellow-500" />
-          <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 stroke-yellow-500" />
-          <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 stroke-yellow-500" />
-          <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 stroke-yellow-500" />
+        <div className="flex items-center gap-0.5 sm:gap-1 shrink-0">
+          <StarIcon className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 fill-yellow-400 stroke-yellow-500" />
+          <StarIcon className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 fill-yellow-400 stroke-yellow-500" />
+          <StarIcon className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 fill-yellow-400 stroke-yellow-500" />
+          <StarIcon className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 fill-yellow-400 stroke-yellow-500" />
+          <StarIcon className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 fill-yellow-400 stroke-yellow-500" />
         </div>
       </div>
 
-      <p className="mt-2 text-base sm:text-lg lg:text-xl leading-relaxed font-semibold tracking-tight">&quot;{testimonial.testimonial}&quot;</p>
+      <p className="text-base sm:text-lg lg:text-xl leading-relaxed font-semibold tracking-tight grow">&quot;{testimonial.testimonial}&quot;</p>
     </div>
   </div>
 );
