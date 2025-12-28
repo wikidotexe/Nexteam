@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import FAQ from "@/components/faq";
 import Service from "@/components/service";
 import Footer from "@/components/footer";
@@ -8,6 +9,39 @@ import OurTeam from "@/components/ourteam";
 import Testimonial from "@/components/testimonial";
 import WhatsAppBubble from "@/components/whatsapp-bubble";
 import CtaAfterTeam from "@/components/cta-after-team";
+
+export const metadata: Metadata = {
+  title: "NoFileExistsHere. (Nexteam) - Jasa Pembuatan Website & Aplikasi",
+  description: "NoFileExistsHere (Nexteam) adalah penyedia layanan teknologi untuk website, aplikasi desktop, aplikasi mobile, desain grafis, jaringan internet, dan troubleshooting yang fokus pada solusi simpel, rapi, dan mudah digunakan.",
+  keywords: [
+    "NoFileExistsHere",
+    "Nexteam",
+    "jasa pembuatan website",
+    "jasa pembuatan aplikasi",
+    "jasa pembuatan aplikasi desktop",
+    "jasa pembuatan aplikasi mobile",
+    "jasa desain grafis",
+    "jasa instalasi jaringan",
+    "jasa troubleshooting komputer",
+    "layanan IT",
+    "IT support",
+  ],
+  openGraph: {
+    title: "NoFileExistsHere. (Nexteam) - Jasa Pembuatan Website & Aplikasi",
+    description:
+      "NoFileExistsHere (Nexteam) adalah penyedia layanan teknologi untuk website, aplikasi desktop, aplikasi mobile, desain grafis, jaringan internet, dan troubleshooting yang fokus pada solusi simpel, rapi, dan mudah digunakan.",
+    url: "/",
+    type: "website",
+    images: [
+      {
+        url: "/logo/logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "NoFileExistsHere (Nexteam) logo",
+      },
+    ],
+  },
+};
 
 export default function Home() {
   return (

@@ -59,7 +59,7 @@ const FAQ = () => {
         <p className="mt-1.5 md:text-center xs:text-lg text-muted-foreground">Jawaban singkat untuk pertanyaan yang paling sering ditanyakan seputar layanan kami.</p>
       </RevealOnScroll>
 
-      <div className="min-h-[550px] md:min-h-[320px] xl:min-h-[300px]">
+      <div className="min-h-137.5 md:min-h-[320px] xl:min-h-[300px]">
         <RevealOnScroll delay={0.05}>
           <Accordion type="single" collapsible className="mt-8 space-y-4 md:columns-2 gap-4">
             {faq.map(({ question, answer }, index) => (

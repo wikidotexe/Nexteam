@@ -9,12 +9,12 @@ import { useEffect, useState } from "react";
 type Client = { name: string; url: string; logo: string } | { name: string; url: string; logoLight: string; logoDark: string };
 
 const clients: Client[] = [
-  { name: "Bon Cafe", logo: "/clients/boncafe.webp", url: "#" },
+  { name: "Bon Cafe", logo: "/clients/boncafe.webp", url: "https://www.boncafeindonesia.com/" },
   {
     name: "BLP Team",
     logoLight: "/clients/blpteam-hitam.webp",
     logoDark: "/clients/blpteam-putih.webp",
-    url: "#",
+    url: "https://blpbeauty.com/",
   },
   { name: "Proban", logo: "/clients/proban.webp", url: "https://proban.co.id/" },
   { name: "Transgo", logo: "/clients/transgo.webp", url: "https://transgo.id/sewa" },
@@ -24,6 +24,7 @@ const clients: Client[] = [
   { name: "Jurnal", logo: "/clients/jurnal.webp", url: "https://journalpress.web.id/index.php/jpc/index" },
   { name: "QPair", logo: "/clients/qpair.webp", url: "#" },
   { name: "Transmonang", logo: "/clients/transmonang.webp", url: "https://transmonang.com/" },
+  { name: "PT Decom Feno Mahaka", logo: "/clients/decom.png", url: "https://decomfenomahaka.com/" },
 ];
 
 const OurClients = () => {
