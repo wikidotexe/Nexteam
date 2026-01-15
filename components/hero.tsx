@@ -19,12 +19,12 @@ const Hero = () => {
             <p className="mt-6 max-w-[60ch] xs:text-lg">Penyedia layanan teknologi di bidang Computers, Internet, dan Website yang mudah diakses.</p>
             <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
               <Button asChild size="lg" className="w-full sm:w-auto rounded-full text-base">
-                <Link href="#services">
-                  Get Started <ArrowUpRight className="h-5! w-5!" />
+                <Link href="/project" className="flex items-center gap-2">
+                  View Projects <ArrowUpRight className="h-5! w-5!" />
                 </Link>
               </Button>
               <Button variant="outline" size="lg" className="w-full sm:w-auto rounded-full text-base shadow-none">
-                <CirclePlay className="h-5! w-5!" /> Watch Demo
+                <CirclePlay className="h-5! w-5!" /> Watch Video
               </Button>
             </div>
           </div>

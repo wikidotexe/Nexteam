@@ -1,8 +1,11 @@
+"use client";
+
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import RevealOnScroll from "./animation/reveal-on-scroll";
 import { AppWindow, Code, Cpu, Globe2, LifeBuoy, Monitor, Palette, Smartphone, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useParallax } from "@/lib/use-parallax";
 
 const services = [
   {
@@ -65,32 +68,42 @@ const Service = () => {
       <RevealOnScroll delay={0.05}>
         <div className="mt-8 xs:mt-14 w-full mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
           {services.map((service, index) => (
-            <RevealOnScroll key={service.title} delay={0.05 * index}>
-              <Link href={`/services/${service.slug}`} aria-label={service.title} className="block group h-full">
-                <Card className="flex h-full flex-col overflow-hidden rounded-xl border bg-card shadow-sm transition-transform duration-150 group-hover:-translate-y-0.5">
-                  <CardContent className="px-0 pt-0 pb-0">
-                    <div className="relative w-full aspect-video bg-muted overflow-hidden">
-                      <Image src={service.image} alt={service.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition-transform duration-300 group-hover:scale-[1.05]" />
-                      <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/70 via-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                      <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                        <div className="flex h-11 w-11 items-center justify-center rounded-full bg-background/90 shadow-md">
-                          <Search className="h-5 w-5" />
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                  <CardHeader className="flex-1 px-6 pb-6 pt-5">
-                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-muted mb-3">
-                      <service.icon className="h-5 w-5" />
-                    </div>
-                    <h4 className="text-lg font-semibold tracking-tight">{service.title}</h4>
-                    <p className="mt-1.5 text-muted-foreground text-sm xs:text-[15px] leading-relaxed">{service.description}</p>
-                  </CardHeader>
-                </Card>
-              </Link>
-            </RevealOnScroll>
+            <ServiceCardWithParallax key={service.title} service={service} index={index} />
           ))}
         </div>
+      </RevealOnScroll>
+    </div>
+  );
+};
+
+const ServiceCardWithParallax = ({ service, index }: { service: (typeof services)[number]; index: number }) => {
+  const { ref } = useParallax(0.2 + (index % 2) * 0.1);
+
+  return (
+    <div ref={ref}>
+      <RevealOnScroll delay={0.05 * index}>
+        <Link href={`/services/${service.slug}`} aria-label={service.title} className="block group h-full">
+          <Card className="flex h-full flex-col overflow-hidden rounded-xl border bg-card shadow-sm transition-transform duration-150 group-hover:-translate-y-0.5">
+            <CardContent className="px-0 pt-0 pb-0">
+              <div className="relative w-full aspect-video bg-muted overflow-hidden">
+                <Image src={service.image} alt={service.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition-transform duration-300 group-hover:scale-[1.05]" />
+                <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/70 via-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-background/90 shadow-md">
+                    <Search className="h-5 w-5" />
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+            <CardHeader className="flex-1 px-6 pb-6 pt-5">
+              <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-muted mb-3">
+                <service.icon className="h-5 w-5" />
+              </div>
+              <h4 className="text-lg font-semibold tracking-tight">{service.title}</h4>
+              <p className="mt-1.5 text-muted-foreground text-sm xs:text-[15px] leading-relaxed">{service.description}</p>
+            </CardHeader>
+          </Card>
+        </Link>
       </RevealOnScroll>
     </div>
   );
