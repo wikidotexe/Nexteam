@@ -35,6 +35,12 @@ const projects = [
     description: "Project optimasi jaringan dan infrastruktur IT untuk cabang-cabang PT BON CAFE INDONESIA agar koneksi lebih stabil dan terukur.",
     type: "Internet & Infrastructure",
   },
+  {
+    slug: "tombrok",
+    title: "Setup Synology Server & Konfigurasi Mikrotik PT Tombrok Jaya Permai",
+    description: "Project setup Synology server dengan RAID configuration dan optimasi jaringan menggunakan Mikrotik di kantor pusat PT Tombrok Jaya Permai secara on-site.",
+    type: "Internet & Infrastructure",
+  },
 ] as const;
 
 const ProjectPage = () => {

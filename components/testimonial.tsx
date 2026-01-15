@@ -84,7 +84,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: (typeof testimonials)[n
           </Avatar>
           <div className="min-w-0 flex-1">
             <p className="text-base sm:text-lg font-semibold truncate">{testimonial.name}</p>
-            <p className="text-xs sm:text-sm text-gray-500 truncate">{testimonial.designation}</p>
+            <p className="text-xs sm:text-sm text-gray-500 line-clamp-2">{testimonial.designation}</p>
           </div>
         </div>
         <div className="flex items-center gap-0.5 sm:gap-1 shrink-0">
