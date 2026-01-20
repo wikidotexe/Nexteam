@@ -25,6 +25,7 @@ const clients: Client[] = [
   { name: "QPair", logo: "/clients/qpair.webp", url: "#" },
   { name: "Transmonang", logo: "/clients/transmonang.webp", url: "https://transmonang.com/" },
   { name: "PT Decom Feno Mahaka", logo: "/clients/decom.png", url: "https://decomfenomahaka.com/" },
+  { name: "PT Avery Jaya Permai", logo: "/clients/Avery.webp", url: "https://averyjayapermai.id/" },
 ];
 
 const OurClients = () => {
@@ -41,10 +42,7 @@ const OurClients = () => {
   }, [api]);
 
   return (
-    <section 
-      id="clients" 
-      className="max-w-(--breakpoint-xl) mx-auto w-full py-12 xs:py-20 px-6"
-    >
+    <section id="clients" className="max-w-(--breakpoint-xl) mx-auto w-full py-12 xs:py-20 px-6">
       <RevealOnScroll>
         <h2 className="text-3xl xs:text-4xl md:text-5xl font-bold tracking-tight text-center">Our Clients</h2>
         <p className="mt-2 text-center text-muted-foreground max-w-xl mx-auto">Brand dan tim yang mempercayakan kami untuk menghadirkan produk digital yang cepat dan andal.</p>
