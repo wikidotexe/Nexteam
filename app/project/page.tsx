@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 
 const projects = [
   {
+    slug: "dinasti-sushi",
+    title: "Dinasti Sushi - Authentic Japanese Restaurant",
+    description: "Pembangunan website landing page dan platform dashboard untuk Dinasti Sushi, mencakup sistem pemesanan customer dan manajemen kitchen admin.",
+    type: "Web Development",
+  },
+  {
     slug: "pesantren",
     title: "Website Pesantren Pondok Bambu",
     description: "Website profil untuk Pesantren Pondok Bambu, menampilkan informasi kegiatan, program, dan kontak pesantren.",
